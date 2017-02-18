@@ -10,3 +10,11 @@ to the basics of using `git` with GitHub.
 Please leave feedback if you have participated in this workshop!  It helps me
 tweak and improve the future iterations of this workshop, close up any holes
 in my instructions, and address any pitfalls involved in using `git` or GitHub.
+
+# Participants:
+
+As part of following along with the workshop, add your name to the list of participants in your fork and make a pull request to add your name here!
+
+- Gwen Lofman
+- Campus Expertocat
+- Octokitty
