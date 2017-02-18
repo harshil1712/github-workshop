@@ -39,6 +39,9 @@ body {
 /*********************************************
  * HEADERS
  *********************************************/
+.reveal h1 {
+    font-weight: 600; }
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -46,9 +49,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #fff;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: uppercase;
@@ -62,7 +63,7 @@ body {
   font-size: 1.6em; }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 1.2em; }
 
 .reveal h4 {
   font-size: 1em; }
@@ -105,10 +106,10 @@ body {
   list-style-type: disc; }
 
 .reveal ul ul {
-  list-style-type: square; }
+  list-style-type: circle; }
 
 .reveal ul ul ul {
-  list-style-type: circle; }
+  list-style-type: square; }
 
 .reveal ul ul,
 .reveal ul ol,
@@ -134,8 +135,7 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+  background: rgba(0,0,0,0.0392) }
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -144,6 +144,14 @@ body {
 .reveal q {
   font-style: italic; }
 
+.reveal code,
+.reveal pre {
+  font-family: "Source Code Pro", monospace;
+  text-transform: lowercase;
+  background: rgba(0,0,0,0.0392);
+  border-radius: 0.08em;
+  padding: 0.05em 0.1em; }
+
 .reveal pre {
   display: block;
   position: relative;
@@ -151,13 +159,8 @@ body {
   margin: 20px auto;
   text-align: left;
   font-size: 0.55em;
-  font-family: monospace;
   line-height: 1.2em;
-  word-wrap: break-word;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
-
-.reveal code {
-  font-family: monospace; }
+  word-wrap: break-word; }
 
 .reveal pre code {
   display: block;
