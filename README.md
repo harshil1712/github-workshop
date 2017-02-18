@@ -18,3 +18,5 @@ As part of following along with the workshop, add your name to the list of parti
 - Gwen Lofman
 - Campus Expertocat
 - Octokitty
+- Matthew
+- Andrew
