@@ -12,23 +12,23 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #3f51b5;
-  background-color: #3f51b5; }
+  background: #ffffff;
+  background-color: #ffffff; }
 
 .reveal {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
-  color: #fff; }
+  color: #333333; }
 
 ::selection {
-  color: #fff;
-  background: #ffc0d5;
+  color: #333333;
+  background: #ffffff;
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
-  background: #ffc0d5;
+  color: #333333;
+  background: #ffffff;
   text-shadow: none; }
 
 .reveal .slides > section,
