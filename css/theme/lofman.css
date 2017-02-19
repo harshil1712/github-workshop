@@ -9,6 +9,30 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #fff; }
 
 /*********************************************
+ * CUSTOM STYLES
+ *********************************************/
+
+/* GitHub style patches */
+
+.patch {
+
+}
+
+.patch__name {
+
+}
+
+.patch__add {
+
+}
+
+.patch__remove {
+
+}
+
+/* Styles for svg paths */
+
+/*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
