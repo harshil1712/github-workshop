@@ -147,7 +147,7 @@ body {
 .reveal code,
 .reveal pre {
   font-family: "Source Code Pro", monospace;
-  text-transform: lowercase;
+  text-transform: none;
   background: rgba(0,0,0,0.0392);
   border-radius: 0.08em;
   padding: 0.05em 0.1em; }
