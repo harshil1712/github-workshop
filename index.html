@@ -296,6 +296,33 @@
 
             <section data-background-image="img/png/post-rebase.png" data-background-size="100vw"></section>
 
+            <section id="git-rebase">
+                <p><code>git rebase &lt;branch&gt;</code> transplants the current branch onto <code>&lt;branch&gt;</code></p>
+                <img alt="git rebse" src="img/gif/git-rebase.gif"/>
+            </section>
+
+            <section>
+                <p><code>git rebase</code> rewinds your changes and adds them somwhere else.</p>
+                <p>This may remove files you've added until you finish the rebase.</p>
+                <p>Sometimes rebase will run into conflicts just like merge, and you have to fix them one commit at a time.</p>
+            </section>
+
+            <section>
+                <p><code>git rebase --abort</code> will stop a rebase in progress</p>
+            </section>
+
+            <section>
+                <p><code>git rebase -Xtheirs</code> will automatically favor our changes</p>
+            </section>
+
+            <section>
+                <p><code>git rebase -Xours</code> will automatically favor their changes</p>
+            </section>
+
+            <section>
+                <p><b>Note:</b> this is the opposite behavior compared to <code>git merge -X</code></p>
+            </section>
+
             <section>
                 <h2>Now to the GitHub part!</h2>
                 <h2>Let's get interactive!</h2>
