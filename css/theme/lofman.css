@@ -32,6 +32,28 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 /* Styles for svg paths */
 
+
+/*********************************************
+ * SLIDE MODIFIERS
+ *********************************************/
+.section-title body {
+    background: #A5257F;
+    backround-color: #A5257F;
+}
+
+.section-title body main section {
+    color: #ffffff !important;
+}
+
+.subsection-title body {
+    background: #84A8CA;
+    backround-color: #84A8CA;
+    color: #ffffff !important;
+}
+.subsection-title body main section {
+    color: #ffffff !important;
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
