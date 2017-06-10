@@ -1,0 +1,23 @@
+{
+  "name": "git workshop",
+  "homepage": "https://github.com/Lionex/github-workshop",
+  "authors": [
+    "Gwen Lofman <Gwen@Lofman.co>"
+  ],
+  "description": "Workshop for git using reveal.js",
+  "main": "index.html",
+  "keywords": [
+    "workshop",
+    "github",
+    "git"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
