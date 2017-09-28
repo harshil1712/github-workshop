@@ -3,19 +3,17 @@
 <head>
     <title>Git &amp; GitHub workshop</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="css/theme/lofman.css">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
 </head>
 <body>
     <main class="reveal">
         <article class="slides">
 
-            <section>
+            <section data-state="section-title">
                 <h1>Git &amp; GitHub</h1>
-                <h3>Getting Started Workshop</h3>
-                <p><small>by Gwen Lofman</small></p>
             </section>
 
             <section>
@@ -52,13 +50,18 @@
                         <li><code>mkdir</code> - make directory</li>
                     </ul>
                 </section>
+
+                <section>
+                    <h2>Notation</h2>
+                    <p>You will often see things like <code>[something]</code> in this talk; this is a placeholder for some value that you have to define or provide.</p>
+                </section>
             </section>
 
             <section><h2>What is <code>git</code>?</h2></section>
 
             <section data-background-image="img/bad-VC.png" data-background-size="100vw"></section>
 
-            <section><h1>Up and Running</h1></section>
+            <section data-state="section-title"><h1>Up and Running</h1></section>
 
             <section>
                 <section>
@@ -107,7 +110,7 @@
                 </section>
             </section>
 
-            <section id="standalone"><h1>Using <code>git</code> as a standalone developer</h1></section>
+            <section id="standalone" data-state="section-title"><h1>Using <code>git</code> as a standalone developer</h1></section>
 
             <section>
                 <h1>A mental model for staging</h1>
@@ -195,7 +198,7 @@
                 <img alt="git revert" src="img/gif/git-revert.gif"/>
             </section>
 
-            <section id="participant">
+            <section id="participant" data-state="section-title">
                 <h1>Using <code>git</code> as a participant</h1>
             </section>
 
@@ -240,40 +243,87 @@
                 </ul>
             </section>
 
-            <section>
-                <section>
-                    <h2>A mental model for merging</h2>
-                    <p>Integrate changes</p>
-                </section>
+            <section data-state="subsection-title"><h2>Merging</h2></section>
 
-                <section data-background-image="img/png/a-commit.png" data-background-size="100vw"></section>
+            <section><p>Integrate changes</p></section>
 
-                <section  data-background-image="img/png/a-branch.png" data-background-size="100vw"></section>
+            <section data-background-image="img/png/a-commit.png" data-background-size="100vw"></section>
 
-                <section data-background-image="img/png/another-commit.png" data-background-size="100vw"></section>
+            <section  data-background-image="img/png/a-branch.png" data-background-size="100vw"></section>
 
-                <section data-background-image="img/png/a-merge.png" data-background-size="100vw"></section>
+            <section data-background-image="img/png/another-commit.png" data-background-size="100vw"></section>
 
-                <section data-background-image="img/png/pre-fast-forward.png" data-background-size="100vw">
-                    <p>Sometimes git can fast-forward</p>
-                </section>
+            <section data-background-image="img/png/a-merge.png" data-background-size="100vw"></section>
 
-                <section data-background-image="img/png/fast-forward.png" data-background-size="100vw"></section>
+            <section><p>Sometimes git can fast-forward</p></section>
+
+            <section data-background-image="img/png/pre-fast-forward.png" data-background-size="100vw"></section>
+
+            <section data-background-image="img/png/fast-forward.png" data-background-size="100vw"></section>
+
+            <section id="git-merge">
+                <p><code>git merge</code> incorporates changes another branch</p>
+                <img/>
             </section>
 
             <section>
-                <section>
-                    <h2>A mental model for rebase</h2>
-                    <p>Transplant branches of a tree</p>
-                </section>
-
-                <section data-background-image="img/png/pre-rebase.png" data-background-size="100vw"></section>
-
-                <section data-background-image="img/png/post-rebase.png" data-background-size="100vw"></section>
+                <h2>Merge Conflicts</h2>
+                <p>Scary at first, but utlimately simple.</p>
             </section>
 
             <section>
+                <p>Sometimes we want to automatically favor our changes or their changes.</p>
+                <p>Saves time going through code.</p>
+            </section>
+
+            <section>
+                <p><code>git merge -Xtheirs</code> will favor their changes</p>
+            </section>
+
+            <section>
+                <p><code>git merge -Xours</code> will favor our changes</p>
+            </section>
+
+            <section data-state="subsection-title"><h2>Rebase</h2></section>
+
+            <section><p>Transplant branches of a tree</p></section>
+
+            <section data-background-image="img/png/pre-rebase.png" data-background-size="100vw"></section>
+
+            <section data-background-image="img/png/post-rebase.png" data-background-size="100vw"></section>
+
+            <section id="git-rebase">
+                <p><code>git rebase &lt;branch&gt;</code> transplants the current branch onto <code>&lt;branch&gt;</code></p>
+                <img alt="git rebse" src="img/gif/git-rebase.gif"/>
+            </section>
+
+            <section>
+                <p><code>git rebase</code> rewinds your changes and adds them somwhere else.</p>
+                <p>This may remove files you've added until you finish the rebase.</p>
+                <p>Sometimes rebase will run into conflicts just like merge, and you have to fix them one commit at a time.</p>
+            </section>
+
+            <section>
+                <p><code>git rebase --abort</code> will stop a rebase in progress</p>
+            </section>
+
+            <section>
+                <p><code>git rebase -Xtheirs</code> will automatically favor our changes</p>
+            </section>
+
+            <section>
+                <p><code>git rebase -Xours</code> will automatically favor their changes</p>
+            </section>
+
+            <section>
+                <p><b>Note:</b> this is the opposite behavior compared to <code>git merge -X</code></p>
+            </section>
+
+            <section data-state="subsection-title">
                 <h2>Now to the GitHub part!</h2>
+            </section>
+
+            <section>
                 <h2>Let's get interactive!</h2>
                 <p><small>Sign up at <a href="https://github.com/join">GitHub.com/join</a></small></p>
             </section>
@@ -282,8 +332,8 @@
 
         </article>
     </main>
-    <script src="reveal.js/lib/js/head.min.js"></script>
-    <script src="reveal.js/js/reveal.js"></script>
+    <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
     <script>
         Reveal.initialize()
         Reveal.configure({ slideNumber: 'h.v' });
