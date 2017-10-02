@@ -139,41 +139,54 @@ for(int i = 1;i < Ntr;i++){
 
             <section>
                 <section>
-                    <h1>Installation</h1>
-                    <p><a target="external" href="https://git-scm.com/download/win">git-scm.com/download/<b>win</b></a></p>
+                    <p><b>Installation</b></p>
+                    <p><a target="external" href="https://git-for-windows.github.io/">git-for-<b>windows</b>.github.io</a></p>
                     <p><a target="external" href="https://git-scm.com/download/mac">git-scm.com/download/<b>mac</b></a></p>
                     <p><a target="external" href="https://git-scm.com/download/linux">git-scm.com/download/<b>linux</b></a></p>
                     <p class="fragment fade-up"><small><i>Linux usually comes with <code>git</code> installed</i></small></p>
                 </section>
 
                 <section>
-                    <h1>Linux</h1>
-                    <small><h2>(Ubuntu/Debian)</h2></small>
+                    <p><b>Linux</b> (Ubuntu/Debian)</p>
+                    <p><code>sudo apt-get install git</code></p>
                     <figure class="toggle-figure">
                         <span class="toggle-figure__button"></span>
                         <img class="toggle-figure__figure" alt="`sudo apt-get install git`" src="img/gif/linux-install-git.gif"/>
                     </figure>
                 </section>
-            </section>
 
-            <section>
-                <p><code>git</code> needs to know who you are</p>
-            </section>
-
-            <section>
                 <section>
-                    <h1>Configuration</h1>
-                    <p><small><code>git</code> needs to know who you are.</small></p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git config --global user.name [name] &amp;&amp; git config --global user.email [email]" src="img/gif/git-config-user.gif"/>
-                    </figure>
+                    <p><b>Mac OSX</b> with homebrew</p>
+                    <p><code>brew install git</code></p>
                 </section>
 
                 <section>
-                    <h2>Why does <code>git</code> need my name?</h2>
-                    <p>Git associates every change with a name and email so you can tell who changed what.</p>
+                    <p><a href="https://git-for-windows.github.io/">git-bash</a> on <b>Windows</b><p>
+                    <p>Turn on <code>CRLF</code> normalization</p>
                 </section>
+            </section>
+
+            <section>
+                <p>Type <code>git</code> into the terminal</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git" src="img/gif/git.gif"/>
+                </figure>
+            </section>
+
+            <section><p>We need to configure <code>git</code></p></section>
+
+            <section>
+                <p><code>git</code> associates your name and email with every change you make</p>
+            </section>
+
+            <section>
+                <p><code>git config --global user.name "name"</code></p>
+                <p><code>git config --global user.name "email"</code></p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git config --global user.name [name] &amp;&amp; git config --global user.email [email]" src="img/gif/git-config-user.gif"/>
+                </figure>
             </section>
 
             <section id="basic" data-state="section-title"><h1>Basic <code>git</code></h1></section>
