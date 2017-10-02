@@ -68,13 +68,13 @@ body {
   color: #333333; }
 
 ::selection {
-  color: #333333;
-  background: #ffffff;
+  color: #fff;
+  background: rgba(0,0,0,0.33);
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #333333;
-  background: #ffffff;
+  color: #fff;
+  background: rgba(0,0,0,0.33);
   text-shadow: none; }
 
 .reveal .slides > section,
