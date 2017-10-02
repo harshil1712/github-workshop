@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="css/theme/lofman.css">
+    <link rel="stylesheet" href="css/toggle-figure.css">
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
 </head>
-<body>
+<body id="body">
     <main class="reveal">
         <article class="slides">
 
@@ -75,7 +76,10 @@
                 <section>
                     <h1>Linux</h1>
                     <small><h2>(Ubuntu/Debian)</h2></small>
-                    <img alt="`sudo apt-get install git`" src="img/gif/linux-install-git.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="`sudo apt-get install git`" src="img/gif/linux-install-git.gif"/>
+                    </figure>
                 </section>
             </section>
 
@@ -83,17 +87,26 @@
                 <section>
                     <h1>Getting Help</h1>
                     <p><small><code>git help</code> or documentation at <a target="external" href="https://git-scm.com/doc">git-scm.com/doc</a></small></p>
-                    <img alt="git help" src="img/gif/git-help.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git help" src="img/gif/git-help.gif"/>
+                    </figure>
                 </section>
 
                 <section>
                     <p>You can get help for individual commands with<br/><code>git help [command]</code></p>
-                    <img alt="git help status" src="img/gif/git-help-status.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git help status" src="img/gif/git-help-status.gif"/>
+                    </figure>
                 </section>
 
                 <section>
                     <p>Git also has an extensive manual with<br/><code>man git</code></p>
-                    <img alt="man git" src="img/gif/man-git.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="man git" src="img/gif/man-git.gif"/>
+                    </figure>
                 </section>
             </section>
 
@@ -101,7 +114,10 @@
                 <section>
                     <h1>Configuration</h1>
                     <p><small><code>git</code> needs to know who you are.</small></p>
-                    <img alt="git config --global user.name [name] &amp;&amp; git config --global user.email [email]" src="img/gif/git-config-user.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git config --global user.name [name] &amp;&amp; git config --global user.email [email]" src="img/gif/git-config-user.gif"/>
+                    </figure>
                 </section>
 
                 <section>
@@ -128,49 +144,73 @@
 
             <section>
                 <p>A git repository is a directory on your computer.</p>
-                <img alt="git init" src="img/gif/git-init.gif"/>
                 <p><small>Your <b><code>.git</code></b> folder holds the internals of git.</small></p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git init" src="img/gif/git-init.gif"/>
+                </figure>
             </section>
 
             <section>
                 <section>
                     <p><code>git status</code> shows the status of your repository.</p>
-                    <img alt="git status" src="img/gif/git-status-hello-world.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git status" src="img/gif/git-status-hello-world.gif"/>
+                    </figure>
                 </section>
 
                 <section>
                     <p><code>git status</code> gives suggestions about what to do next.</p>
-                    <img alt="git status suggestions" src="img/gif/git-st-suggestions.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git status suggestions" src="img/gif/git-st-suggestions.gif"/>
+                    </figure>
                 </section>
             </section>
 
             <section>
                 <p><code>git diff</code> shows untracted changes inside your files</p>
-                <img alt="git diff" src="img/gif/git-diff.gif"/>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git diff" src="img/gif/git-diff.gif"/>
+                </figure>
             </section>
 
             <section>
                 <section>
                     <p><code>git add</code> stages changes</p>
-                    <img alt="git add" src="img/gif/git-add.gif"/>
                     <p><small>Stage relevant changes together</small></p>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git add" src="img/gif/git-add.gif"/>
+                    </figure>
                 </section>
 
                 <section>
                     <p><code>git add -p</code> let's you add parts of a file.</p>
-                    <img alt="git add -p" src="img/gif/git-add-p.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git add -p" src="img/gif/git-add-p.gif"/>
+                    </figure>
                 </section>
             </section>
 
             <section>
                 <p><code>git reset HEAD -- </code> unstages changes</p>
-                <img alt="git reset HEAD --" src="img/gif/git-reset-HEAD.gif"/>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git reset HEAD --" src="img/gif/git-reset-HEAD.gif"/>
+                </figure>
             </section>
 
             <section>
                 <p><code>git commit</code> adds a change to the history</p>
-                <img alt="git commit" src="img/gif/git-commit.gif"/>
-                <p><small>Apply all of your staged changes.  <code>esc :x</code> leaves the editor.</small></p>
+                <p><small>Apply all of your staged changes.  <code>esc :x</code> leaves the vim editor.</small></p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git commit" src="img/gif/git-commit.gif"/>
+                </figure>
             </section>
 
             <section>
@@ -190,12 +230,18 @@
 
             <section>
                 <p><code>git log</code> shows your past changes.</p>
-                <img alt="git log" src="img/gif/git-log.gif"/>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git log" src="img/gif/git-log.gif"/>
+                </figure>
             </section>
 
             <section>
                 <p><code>git revert</code> undoes changes</p>
-                <img alt="git revert" src="img/gif/git-revert.gif"/>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git revert" src="img/gif/git-revert.gif"/>
+                </figure>
             </section>
 
             <section id="participant" data-state="section-title">
@@ -209,8 +255,11 @@
 
             <section>
                 <p><code>git branch</code> lets you work on changes in isolation</p>
-                <img alt="git branch" src="img/gif/git-branch.gif"/>
                 <p>One feature to rule them all!</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
+                </figure>
             </section>
 
             <section>
@@ -222,12 +271,18 @@
                 <section>
                     <p><b>NOTE</b>: checking out a branch changes the files in your repository.</p>
                     <p><code>git stash</code> let's you save changes for later</p>
-                    <img alt="git stash" src="img/gif/git-stash-save.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git stash" src="img/gif/git-stash-save.gif"/>
+                    </figure>
                 </section>
 
                 <section>
                     <p>To bring changes back from your stash: <code>git stash apply</code></p>
-                    <img alt="git stash apply" src="img/gif/git-stash-apply.gif"/>
+                    <figure class="toggle-figure">
+                        <span class="toggle-figure__button"></span>
+                        <img class="toggle-figure__figure" alt="git stash apply" src="img/gif/git-stash-apply.gif"/>
+                    </figure>
                 </section>
             </section>
 
@@ -263,7 +318,6 @@
 
             <section id="git-merge">
                 <p><code>git merge</code> incorporates changes another branch</p>
-                <img/>
             </section>
 
             <section>
@@ -294,7 +348,10 @@
 
             <section id="git-rebase">
                 <p><code>git rebase &lt;branch&gt;</code> transplants the current branch onto <code>&lt;branch&gt;</code></p>
-                <img alt="git rebse" src="img/gif/git-rebase.gif"/>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git rebse" src="img/gif/git-rebase.gif"/>
+                </figure>
             </section>
 
             <section>
@@ -336,7 +393,8 @@
     <script src="bower_components/reveal.js/js/reveal.js"></script>
     <script>
         Reveal.initialize()
-        Reveal.configure({ slideNumber: 'h.v' });
+        Reveal.configure({ slideNumber: 'h.v' })
     </script>
+    <script src="js/toggle-figure.js"></script>
 </body>
 </html>
