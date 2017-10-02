@@ -21,48 +21,98 @@
                 <section>
                     <p>Get the slides at<br/><a href="https://hackfsu.com/links">hackfsu.com/links/</a></p>
                 </section>
-
-                <section>
-                    <p><b>This is a basement slide.</b></p>
-                    <p>You can find all kinds of goodies in the basement slides!</p>
-                </section>
             </section>
 
             <section>
                 <section>
                     <h2>Scope</h2>
                     <ul>
-                        <li>up and running with <code>git</code></li>
-                        <li><code>git</code> as a standalone user</li>
-                        <li><code>git</code> as a participant</li>
+                        <li>Getting <code>git</code></li>
+                        <li>Basic <code>git</code></li>
+                        <li>Advanced <code>git</code></li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Command Syntax</h2>
-                    <p><code>command</code> <code class="fragment">subcommand</code> <code class="fragment">-o</code> <code class="fragment">--option</code></p>
+                    <p><b>This is a basement slide.</b></p>
+                    <p>You can find all kinds of goodies in the basement slides!</p>
                 </section>
 
                 <section>
-                    <h2>Navigating the file system</h2>
+                    <p>You will often see things like <code>[something]</code> in this talk; this is a placeholder for some value that you have to define or provide.</p>
+                </section>
+            </section>
+
+            <section data-state="subsection-title"><h2>What is <code>git</code>?</h2></section>
+
+            <section><p><code>git</code> is <b>good</b> version control</p></section>
+
+            <section>
+                <ul>
+                    <li>undo changes</li>
+                    <li>searchable history</li>
+                    <li>simplify collaboration</li>
+                </ul>
+            </section>
+
+            <section><code>git</code> avoids <b>problems</b> of bad version control</section>
+
+            <section data-background-image="img/bad-VC.png" data-background-size="75vw"></section>
+
+            <section>
+                <p>code commented out with no explanation</p>
+                <pre><code class="cpp" data-trim>
+for(int i = 1;i < Ntr;i++){
+    if(radius > turn_rad[i-1] &amp;&amp; radius <= turn_rad[i] ){
+        int j=1;
+        /*
+        for(int j = 1; j &lt; Nh; j++) {
+                if (theta &gt; heading[j-1]) {
+                // cout &lt;&lt; "I" &lt;&lt; i &lt;&lt; endl;
+                // cout &lt;&lt; "J" &lt;&lt; j &lt;&lt; endl;
+
+                q11 = torque_in[i-1][j-1];
+                q12 = torque_in[i][j-1];
+                q21 = torque_in[i-1][j];
+                q22 = torque_in[i][j];
+
+                // torque_out = sqrt(q22 - q12) * q22/q11;
+                torque_out = abs(sqrt(q22 - q12) * q22/q11);
+
+                cout&lt;&lt;"T_Out:"&lt;&lt;t_out&lt;&lt;endl;
+            }
+        }
+        // Power = data[ i-1+Ntr ] + (radius-data[i-1]);
+        */
+        // Inner torque calculations
+        q11 = torque_in[i-1][0];
+        q22 = torque_in[i][0];
+        torque_out = q22/q11;
+    }
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <section><p><code>git</code> is a command line utility</p></section>
+
+                <section>
+                    <p><b>Terminal command syntax</b></p>
+                    <p><code>command</code> <code class="fragment">subcommand</code> <code class="fragment">-o</code> <code class="fragment">--option</code></p>
+                    <p class="fragment"><code>git</code> <code>[subcommand]</code> <code>[options]</code></p>
+                </section>
+
+                <section>
+                    <p><b>Navigating the file system</p></b>
                     <ul>
                         <li><code>cd</code> - change directory</li>
                         <li><code>ls</code> - list files &amp; directories</li>
                         <li><code>mkdir</code> - make directory</li>
                     </ul>
                 </section>
-
-                <section>
-                    <h2>Notation</h2>
-                    <p>You will often see things like <code>[something]</code> in this talk; this is a placeholder for some value that you have to define or provide.</p>
-                </section>
             </section>
 
-            <section><h2>What is <code>git</code>?</h2></section>
-
-            <section data-background-image="img/bad-VC.png" data-background-size="100vw"></section>
-
-            <section data-state="section-title"><h1>Up and Running</h1></section>
+            <section data-state="section-title"><h1>Getting <code>git</code></h1></section>
 
             <section>
                 <section>
@@ -393,7 +443,12 @@
     <script src="bower_components/reveal.js/js/reveal.js"></script>
     <script>
         Reveal.initialize()
-        Reveal.configure({ slideNumber: 'h.v' })
+        Reveal.configure({
+            slideNumber: 'h.v',
+            dependencies: [
+                { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad() } }
+            ]
+        })
     </script>
     <script src="js/toggle-figure.js"></script>
 </body>
