@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="css/theme/lofman.css">
     <link rel="stylesheet" href="css/toggle-figure.css">
+    <link rel="stylesheet" href="css/history.css">
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
 </head>
@@ -299,18 +300,25 @@ for(int i = 1;i < Ntr;i++){
                 </section>
             </section>
 
+            <section id="staging-and-committing" data-state="subsection-title"><h2>Staging &amp; Committing</h2></section>
+
+            <section><p>Staging combines related changes</p></section>
+
+            <section><p>Commits document those changes<br/>file-by-file, line-by-line</p></section>
+
             <section>
-                <p><code>git diff</code> shows untracted changes inside your files</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git diff" src="img/gif/git-diff.gif"/>
-                </figure>
+                <p><b>A commit stores</b></p>
+                <ul>
+                    <li><i>a descriptive comment</i></li>
+                    <li>metadata</li>
+                    <li>changed lines</li>
+                    <li>commit id</li>
+                </ul>
             </section>
 
             <section>
                 <section>
-                    <p><code>git add</code> stages changes</p>
-                    <p><small>Stage relevant changes together</small></p>
+                    <p><code>git add [file]</code> stages changes</p>
                     <figure class="toggle-figure">
                         <span class="toggle-figure__button"></span>
                         <img class="toggle-figure__figure" alt="git add" src="img/gif/git-add.gif"/>
@@ -318,13 +326,42 @@ for(int i = 1;i < Ntr;i++){
                 </section>
 
                 <section>
-                    <p><code>git add -p</code> let's you add parts of a file.</p>
+                    <p><code>git add -p [file]</code> stages parts of a file</p>
                     <figure class="toggle-figure">
                         <span class="toggle-figure__button"></span>
                         <img class="toggle-figure__figure" alt="git add -p" src="img/gif/git-add-p.gif"/>
                     </figure>
                 </section>
             </section>
+
+            <section>
+                <p><code>[file]</code> can be:</p>
+                <ul>
+                    <li>a file</li>
+                    <li>a list of files</li>
+                    <li>a folder</li>
+                </ul>
+            </section>
+
+            <section>
+                <p><code>git commit</code> puts a change in the history</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git commit" src="img/gif/git-commit.gif"/>
+                </figure>
+            </section>
+
+            <section>
+                <p><b>Step-by-step</b></p>
+                <ol>
+                    <li>create or change a file</li>
+                    <li><code>git status</code> - see changes</li>
+                    <li><code>git add [file]</code> - stage</li>
+                    <li><code>git commit</code> - write history</li>
+                </ol>
+            </section>
+
+            <section><code>git</code> has other commands to make the process easier</section>
 
             <section>
                 <p><code>git reset HEAD -- </code> unstages changes</p>
@@ -335,31 +372,160 @@ for(int i = 1;i < Ntr;i++){
             </section>
 
             <section>
-                <p><code>git commit</code> adds a change to the history</p>
-                <p><small>Apply all of your staged changes.  <code>esc :x</code> leaves the vim editor.</small></p>
+                <p><code>git diff</code> shows unstaged changes<br/>file-by-file, line-by-line</p>
                 <figure class="toggle-figure">
                     <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git commit" src="img/gif/git-commit.gif"/>
+                    <img class="toggle-figure__figure" alt="git diff" src="img/gif/git-diff.gif"/>
                 </figure>
             </section>
 
+            <section id="history" data-state="subsection-title"><h2>Your History</h2></section>
+
+            <section><p><code>git</code> is only as good as your <b>history</b></p></section>
+
+            <section><p><code>git</code> is only as good as your <b>commits</b><span class="fragment">!!!</span></p></section>
+
+            <section><p><b>Commits</b> build a history</p></section>
+
             <section>
-                <p><code>git commit</code> takes a message that describes the patch. Writing a good message is <i>key</i>:</p>
-                <small class="fragment" data-fragment="1">
-                    <ul>
-                        <li>Write in present imperative, for example:</li>
-                        <ul>
-                            <li><code>Add README.md to describe project</code></li>
-                            <li><code>Implement improved error handling, fixes #13</code></li>
-                        </ul>
-                        <li class="fragment" data-fragment="2">Think of commit messages like emails</li>
-                        <li class="fragment" data-fragment="2">Describe not just what, but why</li>
-                    </ul>
-                </small>
+                <p><b>Bad history</b></p>
+                <ul class="history">
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">a43cf8e</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">please help</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">d43efa9</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">sorry</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">cb5a162</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">boop</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">9f52f7c</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">i did stuff</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">096e606</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">more changes</p>
+                    </li>
+                </ul>
             </section>
 
             <section>
-                <p><code>git log</code> shows your past changes.</p>
+                <p><b>Good history</b></p>
+                <ul class="history">
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">d43efa9</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">Add structured logging for cost calculation</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">cb5a162</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">Interpolate cost on uneven time step</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">9f52f7c</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">Implement more efficient cost calculation</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">a43cf8e</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">Implement regression test for cost bug</p>
+                    </li>
+                    <li class="history__commit">
+                        <header class="history__metadata">
+                            <span class="metadata__commit-id">096e606</span>
+                            <span class="metadata__commit-author">Gwen Lofman</span>
+                            <span class="metadata__commit-date">2017-10-02</span>
+                        </header>
+                        <p class="history__mesg">Fix cost propagation bug</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section><p>Commit message guidelines</p></section>
+
+            <section>
+                <p>Write in present tense, imperative mood</p>
+                <small>
+                    <ul>
+                        <li class="fragment"><code>Add README with title and summary</code></li>
+                        <li class="fragment"><code>Refactor presentation section on commit messages</code></li>
+                    </ul>
+                </small>
+                <p><small class="fragment">Commits should sound like commands</small></p>
+            </section>
+
+            <section><p>Describe not just what, but <b>why</b>.</p></section>
+
+            <section>
+                <p>One line usually isn't enough</p>
+                <ul>
+                    <li>Short summary line</li>
+                    <li>Detailed body</li>
+                </ul>
+            </section>
+
+            <section>
+                <p><b>Almost like an email</b></p>
+                <pre>
+Fix cost propagation bug
+
+Previously, cost was calculated but not passed to child
+nodes resulting in failure to create optimal paths.
+
+Ensure child nodes receive calculated cost to prevent
+sub-optimality in results.
+                </pre>
+            </section>
+
+            <section>
+                <p>Limit your summary to about 50 characters</p>
+                <p>~70 characters for the body</p>
+            </section>
+
+            <section><p><code>git</code> has a rich set of tools<br/>for working with history</p></section>
+
+            <section><p>Lets look at <b>logging</b> &amp; <b>reverting</b></p></section>
+
+            <section>
+                <p><code>git log</code> shows history</p>
                 <figure class="toggle-figure">
                     <span class="toggle-figure__button"></span>
                     <img class="toggle-figure__figure" alt="git log" src="img/gif/git-log.gif"/>
@@ -367,11 +533,80 @@ for(int i = 1;i < Ntr;i++){
             </section>
 
             <section>
-                <p><code>git revert</code> undoes changes</p>
+                <p>The log prints to terminal the:</p>
+                <ul>
+                    <li>unique commit id</li>
+                    <li>metadata such as author</li>
+                    <li>commit message</li>
+                </ul>
+            </section>
+
+            <section>
+                <p>The log <b>doesn't</b> show</p>
+                <ul>
+                    <li>which files changed</li>
+                    <li>what lines changed</li>
+                    <li>the history of one file</li>
+                </ul>
+                <p class="fragment">unless we <b>ask</b> it to</p>
+            </section>
+
+            <section>
+                <p><code>git log --stat</code> adds files changed</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git log --stat" src="img/gif/git-log-stat.gif"/>
+                </figure>
+            </section>
+
+            <section>
+                <p><code>git log --patch</code> adds lines changed</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git log --patch" src="img/gif/git-log-patch.gif"/>
+                </figure>
+            </section>
+
+            <section>
+                <p><code>git log --follow [file]</code><br/>shows <code>[file]</code>'s history</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git log --follow index.html" src="img/gif/git-log-follow.gif"/>
+                </figure>
+            </section>
+
+            <section><p>Sometimes we need <b>less</b> information</p></section>
+
+            <section>
+                <p><code>git log --oneline</code> one line per commit</p>
+            </section>
+
+            <section>
+                <p><code>git log -[n]</code> shows last <code>[n]</code> commits</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git log -1" src="img/gif/git-log-n.gif"/>
+                </figure>
+            </section>
+
+            <section>
+                <p><code>git revert</code> undoes commits</p>
                 <figure class="toggle-figure">
                     <span class="toggle-figure__button"></span>
                     <img class="toggle-figure__figure" alt="git revert" src="img/gif/git-revert.gif"/>
                 </figure>
+            </section>
+
+            <section><p>A revert makes a <b>new</b> commit,<br/>reversing an <b>old</b> one</p></section>
+
+            <section>
+                <p><b>Step-by-step</b></p>
+                <ol>
+                    <li>make a commit</li>
+                    <li><code>git log -1</code> - show last commit</li>
+                    <li>copy the commit id</li>
+                    <li><code>git revert [id]</code> - revert</li>
+                </ol>
             </section>
 
             <section>
