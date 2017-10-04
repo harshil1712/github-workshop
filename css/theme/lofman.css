@@ -164,6 +164,11 @@ body {
   display: block;
   margin-left: 40px; }
 
+.reveal li > code {
+    display: inline-block;
+    margin: 0.15em 0em;
+}
+
 .reveal dt {
   font-weight: bold; }
 
