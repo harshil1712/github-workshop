@@ -648,13 +648,84 @@ sub-optimality in results.
             <section id="advanced" data-state="section-title"><h1>Advanced <code>git</code></h1></section>
 
             <section>
-                <h2><code>git</code> is distrubuted version control.</h2>
-                <p>Different participants in a project can share changes between each-other</p>
+                <h2>Scope</h2>
+                <ul>
+                    <li>branches</li>
+                    <li>merge</li>
+                    <li>rebase</li>
+                </ul>
+            </section>
+
+            <section id="branches" data-state="subsection-title"><h2>Branches</h2></section>
+
+            <section>
+                <p>In <code>git</code>, history isn't a straight line<span class="fragment">,<br/>but a <b>branching</b> story</span></p>
             </section>
 
             <section>
-                <p><code>git branch</code> lets you work on changes in isolation</p>
-                <p>One feature to rule them all!</p>
+                <p>In practice, we work on multiple things at once</p>
+            </section>
+
+            <section>
+                <p>Seperate <b>unrelated</b> change sets from each-other</p>
+            </section>
+
+            <section>
+                <p>A branch for each group of changes:</p>
+                <ul>
+                    <li>one feature, one branch</li>
+                    <li>one bug fix, one branch</li>
+                    <li>one release, one branch</li>
+                </ul>
+            </section>
+
+            <section>
+                <p>Good commits are only as good<br/>as your <b>branches</b><span class="fragment">!!!</span></p>
+            </section>
+
+            <section id="branch-vis">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.62205 556.29921">
+                    <defs>
+                        <marker orient="auto" refY="0.0" refX="0.0" id="a" overflow="visible">
+                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#e2a70c" stroke-width="1pt" fill="#e2a70c"/>
+                        </marker>
+                        <marker id="c" refX="0.0" refY="0.0" orient="auto" overflow="visible">
+                            <path transform="scale(.2)" d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+                        </marker>
+                        <marker orient="auto" refY="0.0" refX="0.0" id="b" overflow="visible">
+                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+                        </marker>
+                    </defs>
+                    <g transform="translate(0 -496.063)">
+                        <path d="m 1.2348918,758.82054 623.8543182,0" fill="none" stroke="#000" stroke-width="5.01302958"/>
+                        <circle cx="97.575241" cy="759.62903" r="14.147884"/>
+                    </g>
+                    <g transform="translate(0 -496.063)" class="fragment">
+                        <path d="m 187.44927,680.16231 171.25253,0" fill="none" stroke="#e2a70c" stroke-width="5.76256561"/>
+                        <circle cx="186.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
+                        <path d="m 97.991387,753.5938 0,-43.51668 56.640753,0 15.54168,-15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#c)"/>
+                        <circle cx="358.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
+                        <circle r="14.147884" cy="680.97083" cx="270.71326" fill="#e2a70c"/>
+                    </g>
+                    <g transform="translate(0 -496.063)" class="fragment">
+                        <circle r="14.147884" cy="759.62903" cx="331.48694"/>
+                        <circle cx="446.19211" cy="759.62903" r="14.147884"/>
+                    </g>
+                    <g class="fragment">
+                        <circle cx="531.25842" cy="340.90784" r="14.147884" fill="#071774"/>
+                        <path d="m 518.35874,340.09932 77.49322,0" fill="none" stroke="#071774" stroke-width="5.31496048"/>
+                        <circle r="14.147884" cy="340.90784" cx="591.62268" fill="#071774"/>
+                        <path d="m 444.90085,266.83284 0,43.51668 56.64076,0 15.54168,15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#b)"/>
+                    </g>
+                </svg>
+            </section>
+
+            <section>
+                <p>The default branch is <b>master</b></p>
+            </section>
+
+            <section>
+                <p><code>git branch [name]</code> makes branch <code>[name]</code></p>
                 <figure class="toggle-figure">
                     <span class="toggle-figure__button"></span>
                     <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
@@ -662,80 +733,135 @@ sub-optimality in results.
             </section>
 
             <section>
-                <section>
-                    <h2>A mental model for branches</h2>
-                    <p>Like a branch on a family tree.</p>
-                </section>
-
-                <section>
-                    <p><b>NOTE</b>: checking out a branch changes the files in your repository.</p>
-                    <p><code>git stash</code> let's you save changes for later</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git stash" src="img/gif/git-stash-save.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p>To bring changes back from your stash: <code>git stash apply</code></p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git stash apply" src="img/gif/git-stash-apply.gif"/>
-                    </figure>
-                </section>
+                <p>The branch splits from the <b>current</b> commit</p>
             </section>
 
             <section>
-                <h1>Manipulating Branches</h1>
+                <p><code>git branch</code> lists branches</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
+                </figure>
             </section>
 
             <section>
-                <h2>How do I get changes from one branch to another?</h2>
-                <ul class="fragment">
-                    <li><code>git merge</code></li>
-                    <li><code>git rebase</code></li>
+                <p><code>git checkout [ref]</code> travels through history</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
+                </figure>
+            </section>
+
+            <section>
+                <p><code>[ref]</code> can be:</p>
+                <ul>
+                    <li>branch name</li>
+                    <li>commit <code>[id]</code></li>
                 </ul>
+            </section>
+
+            <section>
+                <p>A checkout will <b>change</b> the files in your folder</p>
+                <aside class="notes">
+                    <p>Your files are the same as they where in that point in history</p>
+                </aside>
+            </section>
+
+            <section>
+                <p><code>git checkout [file]</code> removes unstaged changes</p>
+                <aside class="notes">
+                    <p>Useful when you want to return to a clean version after making bad changes</p>
+                </aside>
+            </section>
+
+            <section>
+                <p><b>Step-by-step</b></p>
+                <ol>
+                    <li><code>git branch [name]</code></li>
+                    <li><code>git checkout [name]</code></li>
+                    <li>make a commit</li>
+                </ol>
+                <aside class="notes">
+                    <ol>
+                        <li>make a new branch from the current commit</li>
+                        <li>checkout the new branch we made</li>
+                        <li>add a commit to the new branch</li>
+                    </ol>
+                </aside>
             </section>
 
             <section data-state="subsection-title"><h2>Merging</h2></section>
 
-            <section><p>Integrate changes</p></section>
+            <section><p>We need a way to join &amp; <b>integrate</b> changes</p></section>
 
-            <section data-background-image="img/png/a-commit.png" data-background-size="100vw"></section>
+            <section id="merge-vis">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.62205 556.29921">
+                    <defs>
+                        <marker orient="auto" refY="0.0" refX="0.0" id="a" overflow="visible">
+                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#e2a70c" stroke-width="1pt" fill="#e2a70c"/>
+                        </marker>
+                        <marker id="c" refX="0.0" refY="0.0" orient="auto" overflow="visible">
+                            <path transform="scale(.2)" d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+                        </marker>
+                        <marker orient="auto" refY="0.0" refX="0.0" id="b" overflow="visible">
+                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+                        </marker>
+                    </defs>
+                    <g transform="translate(0 -496.063)">
+                        <path d="m 1.2348918,758.82054 623.8543182,0" fill="none" stroke="#000" stroke-width="5.01302958"/>
+                        <circle cx="97.575241" cy="759.62903" r="14.147884"/>
+                        <circle r="14.147884" cy="759.62903" cx="331.48694"/>
+                    </g>
+                    <g transform="translate(0 -496.063)" class="fragment">
+                        <path d="m 359.6105,682.89567 0,43.51668 56.64075,0 15.54168,15.54167" fill="none" stroke="#e2a70c" stroke-width="5.01302958" marker-end="url(#a)"/>
+                        <circle cx="446.19211" cy="759.62903" r="14.147884"/>
+                    </g>
+                    <g transform="translate(0 -496.063)">
+                        <path d="m 187.44927,680.16231 171.25253,0" fill="none" stroke="#e2a70c" stroke-width="5.76256561"/>
+                        <circle cx="186.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
+                        <path d="m 97.991387,753.5938 0,-43.51668 56.640753,0 15.54168,-15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#c)"/>
+                        <circle cx="358.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
+                        <circle r="14.147884" cy="680.97083" cx="270.71326" fill="#e2a70c"/>
+                    </g>
+                </svg>
 
-            <section  data-background-image="img/png/a-branch.png" data-background-size="100vw"></section>
-
-            <section data-background-image="img/png/another-commit.png" data-background-size="100vw"></section>
-
-            <section data-background-image="img/png/a-merge.png" data-background-size="100vw"></section>
-
-            <section><p>Sometimes git can fast-forward</p></section>
-
-            <section data-background-image="img/png/pre-fast-forward.png" data-background-size="100vw"></section>
-
-            <section data-background-image="img/png/fast-forward.png" data-background-size="100vw"></section>
+            </section>
 
             <section id="git-merge">
-                <p><code>git merge</code> incorporates changes another branch</p>
+                <p><code>git merge [target]</code> merges <code>[target]</code><br/>into the <b>current</b> branch</p>
             </section>
 
             <section>
-                <h2>Merge Conflicts</h2>
-                <p>Scary at first, but utlimately simple.</p>
+                <p><b>Step-by-Step</b></p>
+                <ol>
+                    <li><code>git branch</code> - list branches</li>
+                    <li><code>git checkout [base]</code></li>
+                    <li><code>git merge [target]</code></li>
+                    <li><code>git log --oneline --graph</code></li>
+                </ol>
             </section>
 
             <section>
-                <p>Sometimes we want to automatically favor our changes or their changes.</p>
-                <p>Saves time going through code.</p>
+                <p>A merge can either:</p>
+                <ul>
+                    <li>make a <b>new</b> commit</li>
+                    <li>fast-forward</li>
+                </ul>
             </section>
 
             <section>
-                <p><code>git merge -Xtheirs</code> will favor their changes</p>
+                <p><b>merge commit</b></p>
+                <img alt="visualizing a merge commit" src="img/png/a-merge.png"/>
             </section>
 
             <section>
-                <p><code>git merge -Xours</code> will favor our changes</p>
+                <p><b>fast-forward</b></p>
+                <img alt="visualizing a merge commit" src="img/png/fast-forward.png"/>
             </section>
+
+            <section><p>Sometimes we have a merge conflict</p></section>
+
+            <section><p>Scary at first, but utlimately simple</p></section>
 
             <section data-state="subsection-title"><h2>Rebase</h2></section>
 
