@@ -1,4 +1,4 @@
-# Find the [_Slides_](https://lionex.github.io/github-workshop/)
+# Find the [_Slides_](https://glfmn.github.io/github-workshop/)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
