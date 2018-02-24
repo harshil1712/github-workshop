@@ -362,20 +362,23 @@
             <section><code>git</code> has other commands to make the process easier</section>
 
             <section>
+                <p><code>git reset HEAD -- </code> unstages changes</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git reset HEAD --" src="img/gif/git-reset-HEAD.gif"/>
+                </figure>
+            </section>
+
+            <section>
                 <section>
-                    <p><code>git reset HEAD -- </code> unstages changes</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git reset HEAD --" src="img/gif/git-reset-HEAD.gif"/>
-                    </figure>
+                    <p><code>git checkout [file]</code> removes unstaged changes</p>
+                    <aside class="notes">
+                        <p>Useful when you want to return to a clean version after making bad changes</p>
+                    </aside>
                 </section>
 
                 <section>
                     <p><code>git checkout .</code> removes all changes</p>
-                </section>
-
-                <section>
-                    <p><code>git checkout [file]</code> removes changes to <code>[file]</code></p>
                 </section>
             </section>
 
@@ -512,15 +515,13 @@
 
             <section>
                 <p><b>Almost like an email</b></p>
-                <pre>
-Fix cost propagation bug
+                <pre><code>Fix cost propagation bug
 
 Previously, cost was calculated but not passed to child
 nodes resulting in failure to create optimal paths.
 
 Ensure child nodes receive calculated cost to prevent
-sub-optimality and failure to converge in results.
-                </pre>
+sub-optimality and failure to converge in results.</code></pre>
             </section>
 
             <section>
@@ -629,7 +630,7 @@ sub-optimality and failure to converge in results.
                 </section>
 
                 <section>
-                    <p>You can get help for individual commands with<br/><code>git help [command]</code></p>
+                    <p><br/><code>git help [command]</code> per-command help</p>
                     <figure class="toggle-figure">
                         <span class="toggle-figure__button"></span>
                         <img class="toggle-figure__figure" alt="git help status" src="img/gif/git-help-status.gif"/>
@@ -637,7 +638,7 @@ sub-optimality and failure to converge in results.
                 </section>
 
                 <section>
-                    <p>Git also has an extensive manual with<br/><code>man git</code></p>
+                    <p><br/><code>man git</code> gives the extensive manual</p>
                     <figure class="toggle-figure">
                         <span class="toggle-figure__button"></span>
                         <img class="toggle-figure__figure" alt="man git" src="img/gif/man-git.gif"/>
@@ -660,6 +661,9 @@ sub-optimality and failure to converge in results.
 
             <section>
                 <p>In <code>git</code>, history isn't a straight line<span class="fragment">,<br/>but a <b>branching</b> story</span></p>
+                <aside class="notes">
+                    <p>Chronological order isn't enough for something as complicated as code</p>
+                </aside>
             </section>
 
             <section>
@@ -667,11 +671,7 @@ sub-optimality and failure to converge in results.
             </section>
 
             <section>
-                <p>Seperate <b>unrelated</b> change sets from each-other</p>
-            </section>
-
-            <section>
-                <p>A branch for each group of changes:</p>
+                <p>Seperate <b>unrelated</b> changes</p>
                 <ul>
                     <li>one feature, one branch</li>
                     <li>one bug fix, one branch</li>
@@ -721,6 +721,14 @@ sub-optimality and failure to converge in results.
             </section>
 
             <section>
+                <p><code>git branch</code> lists branches</p>
+                <figure class="toggle-figure">
+                    <span class="toggle-figure__button"></span>
+                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
+                </figure>
+            </section>
+
+            <section>
                 <p>The default branch is <b>master</b></p>
             </section>
 
@@ -737,11 +745,7 @@ sub-optimality and failure to converge in results.
             </section>
 
             <section>
-                <p><code>git branch</code> lists branches</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
-                </figure>
+                <p>When you create a branch,<br/>you <b>do not</b> move to it.</p>
             </section>
 
             <section>
@@ -750,6 +754,10 @@ sub-optimality and failure to converge in results.
                     <span class="toggle-figure__button"></span>
                     <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
                 </figure>
+                <aside class="notes">
+                    <p>We are still in the old branch</p>
+                    <p>We need to move to the new branch explicitly</p>
+                </aside>
             </section>
 
             <section>
@@ -764,13 +772,7 @@ sub-optimality and failure to converge in results.
                 <p>A checkout will <b>change</b> the files in your folder</p>
                 <aside class="notes">
                     <p>Your files are the same as they where in that point in history</p>
-                </aside>
-            </section>
-
-            <section>
-                <p><code>git checkout [file]</code> removes unstaged changes</p>
-                <aside class="notes">
-                    <p>Useful when you want to return to a clean version after making bad changes</p>
+                    <p>You need to have a clean repo, aka no staged or unstaged changes</p>
                 </aside>
             </section>
 
@@ -837,7 +839,7 @@ sub-optimality and failure to converge in results.
                     <li><code>git branch</code> - list branches</li>
                     <li><code>git checkout [base]</code></li>
                     <li><code>git merge [target]</code></li>
-                    <li><code>git log --oneline --graph</code></li>
+                    <li><code>git log --oneline</code></li>
                 </ol>
             </section>
 
@@ -856,58 +858,124 @@ sub-optimality and failure to converge in results.
 
             <section>
                 <p><b>fast-forward</b></p>
-                <img alt="visualizing a merge commit" src="img/png/fast-forward.png"/>
+                <img alt="visualizing a fast-forward" src="img/png/fast-forward.png"/>
             </section>
 
             <section><p>Sometimes we have a merge conflict</p></section>
 
-            <section><p>Scary at first, but utlimately simple</p></section>
+            <section>
+                <p>Both branches changed the <b>same</b> lines</p>
+<pre><code class="markdown"># README: This is a practice `git` repository
+
+<<<<<<< HEAD
+I added this change in master, no conflicts here!
+=======
+I added this change in conflict, this is a conflict!
+>>>>>>> conflict
+
+</code></pre>
+                <p><small><code>git</code> helps visualize conflicts</small></p>
+                <aside class="notes">
+                    <p><code>git</code> does not presume which changes are right</p>
+                </aside>
+            </section>
+
+            <section>
+                <p><code>git add</code> the <b>fixed</b> file</p>
+<pre><code class="markdown"># README: This is a practice `git` repository
+
+I added this change in master, but there was a conflict!
+
+</code></pre>
+            </section>
+
+            <section id="step-by-step-conflict">
+                <p><b>Step-by-step</b></p>
+                <ol>
+                    <li>make a commit in a new <code>[branch]</code></li>
+                    <li>commit changing <b>same</b> line in <code>[base]</code></li>
+                    <li><code>git merge [branch]</code></li>
+                    <li>Fix the conflict in <code>[file]</code></li>
+                    <li><code>git add [file] &amp;&amp; git commit</code></li>
+                </ol>
+            </section>
+
+            <section>
+                <p><code>git reset --hard HEAD</code> cancels a merge with conflicts</p>
+            </section>
 
             <section data-state="subsection-title"><h2>Rebase</h2></section>
 
-            <section><p>Transplant branches of a tree</p></section>
+            <section><p>Transplant branches from one place to another</p></section>
 
             <section data-background-image="img/png/pre-rebase.png" data-background-size="100vw"></section>
 
             <section data-background-image="img/png/post-rebase.png" data-background-size="100vw"></section>
 
+            <section><p>Avoid <b>new</b> commits!</p></section>
+
             <section id="git-rebase">
-                <p><code>git rebase &lt;branch&gt;</code> transplants the current branch onto <code>&lt;branch&gt;</code></p>
+                <p><code>git rebase [ref]</code> transplants onto <code>[ref]</code></p>
                 <figure class="toggle-figure">
                     <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git rebse" src="img/gif/git-rebase.gif"/>
+                    <img class="toggle-figure__figure" alt="git rebase" src="img/gif/git-rebase.gif"/>
                 </figure>
             </section>
 
+            <section><p>Rewind changes and <b>re-apply</b> one-by-one</p></section>
+
+            <section><p>Fix conflicts commit-by-commit</p></section>
+
             <section>
-                <p><code>git rebase</code> rewinds your changes and adds them somwhere else.</p>
-                <p>This may remove files you've added until you finish the rebase.</p>
-                <p>Sometimes rebase will run into conflicts just like merge, and you have to fix them one commit at a time.</p>
+                <section>
+                    <p><code>git rebase --abort</code> stop a rebase in progress</p>
+                </section>
+
+                <section>
+                    <p><code>git rebase -Xtheirs</code> automatically favor<br/>rebase-branch changes</p>
+                </section>
+
+                <section>
+                    <p><code>git rebase -Xours</code> automatically favor<br/>base branch changes</p>
+                </section>
+
+                <section>
+                    <p><b>Note:</b> this is the opposite behavior compared to <code>git merge -X</code></p>
+                </section>
+            </section>
+
+            <section id="github" data-state="section-title"><h1>GitHub</h1></section>
+
+            <section>
+                <h2>Scope</h2>
+                <ul>
+                    <li>make a repository</li>
+                    <li>remotes</li>
+                    <li>collaborating</li>
+                </ul>
             </section>
 
             <section>
-                <p><code>git rebase --abort</code> will stop a rebase in progress</p>
+                <p>Sign up at <a href="https://github.com/join">GitHub.com/<b>join</b></a></p>
             </section>
 
             <section>
-                <p><code>git rebase -Xtheirs</code> will automatically favor our changes</p>
-            </section>
-
-            <section>
-                <p><code>git rebase -Xours</code> will automatically favor their changes</p>
-            </section>
-
-            <section>
-                <p><b>Note:</b> this is the opposite behavior compared to <code>git merge -X</code></p>
+                <p>GitHub is an online platform for <code>git</code></p>
+                <p><a href="https://github.com/explore">GitHub.com/<b>explore</b></a></p>
             </section>
 
             <section data-state="subsection-title">
-                <h2>Now to the GitHub part!</h2>
+                <h2>GitHub Repositories</h2>
             </section>
 
-            <section>
-                <h2>Let's get interactive!</h2>
-                <p><small>Sign up at <a href="https://github.com/join">GitHub.com/join</a></small></p>
+            <section data-state="subsection-title">
+                <h2>Remotes</h2>
+            </section>
+
+            <section><p>A <b>remote</b> computer with a <b>full</b> clone<br/>of the repository</p></section>
+
+            <section data-state="subsection-title">
+                <h2>Collaborating</h2>
             </section>
 
             <section id="questions">
