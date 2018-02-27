@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Git & GitHub",
+    "packageVersion": "1.1.0",
+    "useSass": true,
+    "deployToGithubPages": true,
+    "githubUsername": "glfmn",
+    "githubRepository": "github-workshop-pages"
+  }
+}

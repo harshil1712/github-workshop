@@ -1,1002 +1,1169 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Git &amp; GitHub workshop</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="css/theme/lofman.css">
-    <link rel="stylesheet" href="css/toggle-figure.css">
-    <link rel="stylesheet" href="css/history.css">
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/darcula.css">
-</head>
-<body id="body">
-    <main class="reveal">
-        <article class="slides">
-
-            <section data-state="section-title">
-                <h1>Git &amp; GitHub</h1>
-                <small><p>by <b>Gwen Lofman</b></p></small>
-            </section>
-
-            <section>
-                <section>
-                    <p>Get the slides at<br/><a href="https://hackfsu.com/links">hackfsu.com/links/</a></p>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Scope</h2>
-                    <ul>
-                        <li>Getting <code>git</code></li>
-                        <li>Basic <code>git</code></li>
-                        <li>Advanced <code>git</code></li>
-                        <li>Using <b>GitHub</b></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <p><b>This is a basement slide.</b></p>
-                    <p>You can find all kinds of goodies in the basement slides!</p>
-                </section>
-
-                <section>
-                    <p>You will often see things like <code>[something]</code> in this talk; this is a placeholder for some value that you have to define or provide.</p>
-                </section>
-            </section>
-
-            <section data-state="subsection-title"><h2>What is <code>git</code>?</h2></section>
-
-            <section><p><code>git</code> is <b>good</b> version control</p></section>
-
-            <section>
-                <ul>
-                    <li>undo changes</li>
-                    <li>searchable history</li>
-                    <li>simplify collaboration</li>
-                </ul>
-            </section>
-
-            <section><code>git</code> avoids <b>problems</b> of bad version control</section>
-
-            <section data-background-image="img/bad-VC.png" data-background-size="75vw"></section>
-
-            <section>
-                <p>code commented out with no explanation</p>
-<pre class="c++"><code>for(int i = 1;i < Ntr;i++){
-    if(radius > turn_rad[i-1] &amp;&amp; radius <= turn_rad[i] ){
-        int j=1;
-        /*
-        for(int j = 1; j &lt; Nh; j++) {
-                if (theta &gt; heading[j-1]) {
-                // cout &lt;&lt; "I" &lt;&lt; i &lt;&lt; endl;
-                // cout &lt;&lt; "J" &lt;&lt; j &lt;&lt; endl;
-
-                q11 = torque_in[i-1][j-1];
-                q12 = torque_in[i][j-1];
-                q21 = torque_in[i-1][j];
-                q22 = torque_in[i][j];
-
-                // torque_out = sqrt(q22 - q12) * q22/q11;
-                torque_out = abs(sqrt(q22 - q12) * q22/q11);
-
-                cout&lt;&lt;"T_Out:"&lt;&lt;t_out&lt;&lt;endl;
-            }
-        }
-        // Power = data[ i-1+Ntr ] + (radius-data[i-1]);
-        */
-        // Inner torque calculations
-        q11 = torque_in[i-1][0];
-        q22 = torque_in[i][0];
-        torque_out = q22/q11;
-    }
-}</code></pre>
-            </section>
-
-            <section>
-                <section>
-                    <p><code>git</code> is a command line utility</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="terminal emulator example" src="img/gif/terminal.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><b>Terminal command syntax</b></p>
-                    <p><code>command</code> <code class="fragment">subcommand</code> <code class="fragment">-o</code> <code class="fragment">--option</code></p>
-                    <p class="fragment"><code>git</code> <code>[subcommand]</code> <code>[options]</code></p>
-                </section>
-
-                <section>
-                    <p><b>Navigating the file system</p></b>
-                    <ul>
-                        <li><code>cd</code> - change directory</li>
-                        <li><code>ls</code> - list files &amp; directories</li>
-                        <li><code>mkdir</code> - make directory</li>
-                    </ul>
-                </section>
-            </section>
-
-            <section data-state="subsection-title"><h2>What is GitHub?</h2></section>
-
-            <section><b>GitHub</b> is an online interface for <code>git</code>.</section>
-
-            <section>
-                <ul>
-                    <li>host your code online</li>
-                    <li>extra collaboration tools</li>
-                    <li>large community of developers</li>
-                    <li>community platform</li>
-                </ul>
-            </section>
-
-            <section><p><a href="https://github.com/">Sign up</a>!</p></section>
-
-            <section id="get" data-state="section-title"><h1>Getting <code>git</code></h1></section>
-
-            <section>
-                <section>
-                    <p><b>Installation</b></p>
-                    <p><a target="external" href="https://git-for-windows.github.io/">git-for-<b>windows</b>.github.io</a></p>
-                    <p><a target="external" href="https://git-scm.com/download/mac">git-scm.com/download/<b>mac</b></a></p>
-                    <p><a target="external" href="https://git-scm.com/download/linux">git-scm.com/download/<b>linux</b></a></p>
-                    <p class="fragment fade-up"><small><i>Linux usually comes with <code>git</code> installed</i></small></p>
-                </section>
-
-                <section>
-                    <p><b>Linux</b> (Ubuntu/Debian)</p>
-                    <p><code>sudo apt-get install git</code></p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="`sudo apt-get install git`" src="img/gif/linux-install-git.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><b>Mac OSX</b> with homebrew</p>
-                    <p><code>brew install git</code></p>
-                </section>
-
-                <section>
-                    <p><a href="https://git-for-windows.github.io/">git-bash</a> on <b>Windows</b><p>
-                    <p>Turn on <code>CRLF</code> normalization</p>
-                </section>
-            </section>
-
-            <section>
-                <p>Type <code>git</code> into the terminal</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git" src="img/gif/git.gif"/>
-                </figure>
-            </section>
-
-            <section><p>We need to configure <code>git</code></p></section>
-
-            <section>
-                <p><code>git</code> associates your name and email with every change you make</p>
-            </section>
-
-            <section>
-                <p><code>git config --global user.name "name"</code></p>
-                <p><code>git config --global user.name "email"</code></p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git config --global user.name [name] &amp;&amp; git config --global user.email [email]" src="img/gif/git-config-user.gif"/>
-                </figure>
-            </section>
-
-            <section id="basic" data-state="section-title"><h1>Basic <code>git</code></h1></section>
-
-            <section>
-                <h2>Scope</h2>
-                <ul>
-                    <li>the repository</li>
-                    <li>staging &amp; committing</li>
-                    <li>your history</li>
-                </ul>
-            </section>
-
-            <section id="repository" data-state="subsection-title"><h2>The Repository</h2></section>
-
-            <section><p>A <code>git</code> repository is a folder on your computer</p></section>
-
-            <section><p>Your code and all its versions live in the repository</p></section>
-
-            <section>
-                <p>Two ways to get a repository</p>
-                <ul>
-                    <li>make a new one</li>
-                    <li>copy an old one</li>
-                </ul>
-            </section>
-
-            <section>
-                <section id="git-init">
-                    <p><code>git init</code> makes a new repository</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git init" src="img/gif/git-init.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p>The <code>.git</code> folder holds <code>git</code>'s gits guts</p>
-                    <p>See it with <code>ls -A</code></p>
-                </section>
-
-                <section><p>Don't mess with the <code>.git</code> folder,<br/>it stores <b>all</b> of your changes</p></section>
-            </section>
-
-            <section>
-                <p>The <b>current</b> folder becomes the repository</p>
-                <aside class="notes">It's easy to accidentally turn the wrong folder into a repository!</aside>
-            </section>
-
-            <section>
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li><code>mkdir</code> - make a new folder</li>
-                    <li><code>cd</code> - enter the folder</li>
-                    <li><code>git init</code> - make the repo</li>
-                </ol>
-            </section>
-
-            <section id="git-clone">
-                <p><code>git clone [path]</code> copies a repository</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git clone" src="img/gif/git-clone.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <section>
-                    <p>This makes a <b>new</b> folder</p>
-                    <aside class="notes">This is different than <code>git init</code>!</aside>
-                </section>
-
-                <section>
-                    <p>You can specify which folder with<br/><code>git clone [path] [destination]</code></p>
-                </section>
-            </section>
-
-            <section>
-                <p>The <code>[path]</code> can be:</p>
-                <ul>
-                    <li>a folder on your computer</li>
-                    <li>a link to a repository</li>
-                </ul>
-            </section>
-
-            <section>
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li><code>cd</code> into <i>parent</i> folder</li>
-                    <li><code>git clone [path]</code></li>
-                </ol>
-                <p class="fragment"><small><a>https://github.com/Lionex/github-workshop.git</a></small></p>
-            </section>
-
-            <section>
-                <section>
-                    <p><code>git status</code> tells you about your repository</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git status" src="img/gif/git-status-hello-world.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><code>git status</code> can suggest what to do next</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git status suggestions" src="img/gif/git-st-suggestions.gif"/>
-                    </figure>
-                </section>
-            </section>
-
-            <section id="staging-and-committing" data-state="subsection-title"><h2>Staging &amp; Committing</h2></section>
-
-            <section><p>Staging combines related changes</p></section>
-
-            <section><p>Commits document those changes<br/>file-by-file, line-by-line</p></section>
-
-            <section>
-                <p><b>A commit stores</b></p>
-                <ul>
-                    <li><i>a descriptive comment</i></li>
-                    <li>metadata</li>
-                    <li>changed lines</li>
-                    <li>commit id</li>
-                </ul>
-            </section>
-
-            <section>
-                <section>
-                    <p><code>git add [file]</code> stages changes</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git add" src="img/gif/git-add.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><code>git add -p [file]</code> stages parts of a file</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git add -p" src="img/gif/git-add-p.gif"/>
-                    </figure>
-                </section>
-            </section>
-
-            <section>
-                <p><code>[file]</code> can be:</p>
-                <ul>
-                    <li>a file</li>
-                    <li>a list of files</li>
-                    <li>a folder</li>
-                </ul>
-            </section>
-
-            <section>
-                <p><code>git commit</code> puts a change in the history</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git commit" src="img/gif/git-commit.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li>create or change a file</li>
-                    <li><code>git status</code> - see changes</li>
-                    <li><code>git add [file]</code> - stage</li>
-                    <li><code>git commit</code> - write history</li>
-                </ol>
-            </section>
-
-            <section><code>git</code> has other commands to make the process easier</section>
-
-            <section>
-                <p><code>git reset HEAD -- </code> unstages changes</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git reset HEAD --" src="img/gif/git-reset-HEAD.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <section>
-                    <p><code>git checkout [file]</code> removes unstaged changes</p>
-                    <aside class="notes">
-                        <p>Useful when you want to return to a clean version after making bad changes</p>
-                    </aside>
-                </section>
-
-                <section>
-                    <p><code>git checkout .</code> removes all changes</p>
-                </section>
-            </section>
-
-            <section>
-                <p><code>git diff</code> shows unstaged changes<br/>file-by-file, line-by-line</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git diff" src="img/gif/git-diff.gif"/>
-                </figure>
-            </section>
-
-            <section id="history" data-state="subsection-title"><h2>Your History</h2></section>
-
-            <section><p><code>git</code> is only as good as your <b>history</b></p></section>
-
-            <section><p><code>git</code> is only as good as your <b>commits</b><span class="fragment">!!!</span></p></section>
-
-            <section><p><b>Commits</b> build a history</p></section>
-
-            <section>
-                <p><b>Bad history</b></p>
-                <ul class="history">
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">a43cf8e</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">please help</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">d43efa9</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">sorry</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">cb5a162</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">boop</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">9f52f7c</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">i did stuff</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">096e606</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">more changes</p>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <p><b>Good history</b></p>
-                <ul class="history">
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">d43efa9</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">Add structured logging for cost calculation</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">cb5a162</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">Interpolate cost on uneven time step</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">9f52f7c</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">Implement more efficient cost calculation</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">a43cf8e</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">Implement regression test for cost bug</p>
-                    </li>
-                    <li class="history__commit">
-                        <header class="history__metadata">
-                            <span class="metadata__commit-id">096e606</span>
-                            <span class="metadata__commit-author">Gwen Lofman</span>
-                            <span class="metadata__commit-date">2017-10-02</span>
-                        </header>
-                        <p class="history__mesg">Fix cost propagation bug</p>
-                    </li>
-                </ul>
-            </section>
-
-            <section><p>Pro tips for Pro commit messages</p></section>
-
-            <section>
-                <p>Write in present tense, imperative mood</p>
-                <small>
-                    <ul>
-                        <li class="fragment"><code>Add README with title and summary</code></li>
-                        <li class="fragment"><code>Refactor presentation section on commit messages</code></li>
-                    </ul>
-                </small>
-                <p><small class="fragment">Commits should sound like commands</small></p>
-            </section>
-
-            <section><p>Describe not just what, but <b>why</b>.</p></section>
-
-            <section>
-                <p>One line usually isn't enough</p>
-                <ul>
-                    <li>Short summary line</li>
-                    <li>Detailed body</li>
-                </ul>
-            </section>
-
-            <section>
-                <p><b>Almost like an email</b></p>
-                <pre><code>Fix cost propagation bug
-
-Previously, cost was calculated but not passed to child
-nodes resulting in failure to create optimal paths.
-
-Ensure child nodes receive calculated cost to prevent
-sub-optimality and failure to converge in results.</code></pre>
-            </section>
-
-            <section>
-                <p>Limit your summary to about 50 characters</p>
-                <p>~70 characters for the body</p>
-            </section>
-
-            <section><p><code>git</code> has a rich set of tools<br/>for working with history</p></section>
-
-            <section><p>Lets look at <b>logging</b> &amp; <b>reverting</b></p></section>
-
-            <section>
-                <p><code>git log</code> shows history</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git log" src="img/gif/git-log.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p>The log prints to terminal the:</p>
-                <ul>
-                    <li>unique commit id</li>
-                    <li>metadata such as author</li>
-                    <li>commit message</li>
-                </ul>
-            </section>
-
-            <section>
-                <p>The log <b>doesn't</b> show</p>
-                <ul>
-                    <li>which files changed</li>
-                    <li>what lines changed</li>
-                    <li>the history of one file</li>
-                </ul>
-                <p class="fragment">unless we <b>ask</b> it to</p>
-            </section>
-
-            <section>
-                <p><code>git log --stat</code> adds files changed</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git log --stat" src="img/gif/git-log-stat.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p><code>git log --patch</code> adds lines changed</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git log --patch" src="img/gif/git-log-patch.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p><code>git log --follow [file]</code><br/>shows <code>[file]</code>'s history</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git log --follow index.html" src="img/gif/git-log-follow.gif"/>
-                </figure>
-            </section>
-
-            <section><p>Sometimes we need <b>less</b> information</p></section>
-
-            <section>
-                <p><code>git log --oneline</code> one line per commit</p>
-            </section>
-
-            <section>
-                <p><code>git log -[n]</code> shows last <code>[n]</code> commits</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git log -1" src="img/gif/git-log-n.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p><code>git revert</code> undoes commits</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git revert" src="img/gif/git-revert.gif"/>
-                </figure>
-            </section>
-
-            <section><p>A revert makes a <b>new</b> commit,<br/>reversing an <b>old</b> one</p></section>
-
-            <section>
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li>make a commit</li>
-                    <li><code>git log -1</code> - show last commit</li>
-                    <li>copy the commit id</li>
-                    <li><code>git revert [id]</code> - revert</li>
-                    <li><code>git log --patch -2</code> - inspect</li>
-                </ol>
-            </section>
-
-            <section>
-                <section>
-                    <p><b>Getting Help</b></p>
-                    <p><code>git help</code> or documentation at <a target="external" href="https://git-scm.com/doc">git-scm.com/doc</a></p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git help" src="img/gif/git-help.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><br/><code>git help [command]</code> per-command help</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="git help status" src="img/gif/git-help-status.gif"/>
-                    </figure>
-                </section>
-
-                <section>
-                    <p><br/><code>man git</code> gives the extensive manual</p>
-                    <figure class="toggle-figure">
-                        <span class="toggle-figure__button"></span>
-                        <img class="toggle-figure__figure" alt="man git" src="img/gif/man-git.gif"/>
-                    </figure>
-                </section>
-            </section>
-
-            <section id="advanced" data-state="section-title"><h1>Advanced <code>git</code></h1></section>
-
-            <section>
-                <h2>Scope</h2>
-                <ul>
-                    <li>branches</li>
-                    <li>merge</li>
-                    <li>rebase</li>
-                </ul>
-            </section>
-
-            <section id="branches" data-state="subsection-title"><h2>Branches</h2></section>
-
-            <section>
-                <p>In <code>git</code>, history isn't a straight line<span class="fragment">,<br/>but a <b>branching</b> story</span></p>
-                <aside class="notes">
-                    <p>Chronological order isn't enough for something as complicated as code</p>
-                </aside>
-            </section>
-
-            <section>
-                <p>In practice, we work on multiple things at once</p>
-            </section>
-
-            <section>
-                <p>Seperate <b>unrelated</b> changes</p>
-                <ul>
-                    <li>one feature, one branch</li>
-                    <li>one bug fix, one branch</li>
-                    <li>one release, one branch</li>
-                </ul>
-            </section>
-
-            <section>
-                <p>Good commits are only as good<br/>as your <b>branches</b><span class="fragment">!!!</span></p>
-            </section>
-
-            <section id="branch-vis">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.62205 556.29921">
-                    <defs>
-                        <marker orient="auto" refY="0.0" refX="0.0" id="a" overflow="visible">
-                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#e2a70c" stroke-width="1pt" fill="#e2a70c"/>
-                        </marker>
-                        <marker id="c" refX="0.0" refY="0.0" orient="auto" overflow="visible">
-                            <path transform="scale(.2)" d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
-                        </marker>
-                        <marker orient="auto" refY="0.0" refX="0.0" id="b" overflow="visible">
-                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
-                        </marker>
-                    </defs>
-                    <g transform="translate(0 -496.063)">
-                        <path d="m 1.2348918,758.82054 623.8543182,0" fill="none" stroke="#000" stroke-width="5.01302958"/>
-                        <circle cx="97.575241" cy="759.62903" r="14.147884"/>
-                    </g>
-                    <g transform="translate(0 -496.063)" class="fragment">
-                        <path d="m 187.44927,680.16231 171.25253,0" fill="none" stroke="#e2a70c" stroke-width="5.76256561"/>
-                        <circle cx="186.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
-                        <path d="m 97.991387,753.5938 0,-43.51668 56.640753,0 15.54168,-15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#c)"/>
-                        <circle cx="358.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
-                        <circle r="14.147884" cy="680.97083" cx="270.71326" fill="#e2a70c"/>
-                    </g>
-                    <g transform="translate(0 -496.063)" class="fragment">
-                        <circle r="14.147884" cy="759.62903" cx="331.48694"/>
-                        <circle cx="446.19211" cy="759.62903" r="14.147884"/>
-                    </g>
-                    <g class="fragment">
-                        <circle cx="531.25842" cy="340.90784" r="14.147884" fill="#071774"/>
-                        <path d="m 518.35874,340.09932 77.49322,0" fill="none" stroke="#071774" stroke-width="5.31496048"/>
-                        <circle r="14.147884" cy="340.90784" cx="591.62268" fill="#071774"/>
-                        <path d="m 444.90085,266.83284 0,43.51668 56.64076,0 15.54168,15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#b)"/>
-                    </g>
-                </svg>
-            </section>
-
-            <section>
-                <p><code>git branch</code> lists branches</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p>The default branch is <b>master</b></p>
-            </section>
-
-            <section>
-                <p><code>git branch [name]</code> makes branch <code>[name]</code></p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
-                </figure>
-            </section>
-
-            <section>
-                <p>The branch splits from the <b>current</b> commit</p>
-            </section>
-
-            <section>
-                <p>When you create a branch,<br/>you <b>do not</b> move to it.</p>
-            </section>
-
-            <section>
-                <p><code>git checkout [ref]</code> travels through history</p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git branch" src="img/gif/git-branch.gif"/>
-                </figure>
-                <aside class="notes">
-                    <p>We are still in the old branch</p>
-                    <p>We need to move to the new branch explicitly</p>
-                </aside>
-            </section>
-
-            <section>
-                <p><code>[ref]</code> can be:</p>
-                <ul>
-                    <li>branch name</li>
-                    <li>commit <code>[id]</code></li>
-                </ul>
-            </section>
-
-            <section>
-                <p>A checkout will <b>change</b> the files in your folder</p>
-                <aside class="notes">
-                    <p>Your files are the same as they where in that point in history</p>
-                    <p>You need to have a clean repo, aka no staged or unstaged changes</p>
-                </aside>
-            </section>
-
-            <section>
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li><code>git branch [name]</code></li>
-                    <li><code>git checkout [name]</code></li>
-                    <li>make a commit</li>
-                </ol>
-                <aside class="notes">
-                    <ol>
-                        <li>make a new branch from the current commit</li>
-                        <li>checkout the new branch we made</li>
-                        <li>add a commit to the new branch</li>
-                    </ol>
-                </aside>
-            </section>
-
-            <section data-state="subsection-title"><h2>Merging</h2></section>
-
-            <section><p>We need a way to join &amp; <b>integrate</b> changes</p></section>
-
-            <section id="merge-vis">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.62205 556.29921">
-                    <defs>
-                        <marker orient="auto" refY="0.0" refX="0.0" id="a" overflow="visible">
-                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#e2a70c" stroke-width="1pt" fill="#e2a70c"/>
-                        </marker>
-                        <marker id="c" refX="0.0" refY="0.0" orient="auto" overflow="visible">
-                            <path transform="scale(.2)" d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
-                        </marker>
-                        <marker orient="auto" refY="0.0" refX="0.0" id="b" overflow="visible">
-                            <path d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z" transform="scale(.2)" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
-                        </marker>
-                    </defs>
-                    <g transform="translate(0 -496.063)">
-                        <path d="m 1.2348918,758.82054 623.8543182,0" fill="none" stroke="#000" stroke-width="5.01302958"/>
-                        <circle cx="97.575241" cy="759.62903" r="14.147884"/>
-                        <circle r="14.147884" cy="759.62903" cx="331.48694"/>
-                    </g>
-                    <g transform="translate(0 -496.063)" class="fragment">
-                        <path d="m 359.6105,682.89567 0,43.51668 56.64075,0 15.54168,15.54167" fill="none" stroke="#e2a70c" stroke-width="5.01302958" marker-end="url(#a)"/>
-                        <circle cx="446.19211" cy="759.62903" r="14.147884"/>
-                    </g>
-                    <g transform="translate(0 -496.063)">
-                        <path d="m 187.44927,680.16231 171.25253,0" fill="none" stroke="#e2a70c" stroke-width="5.76256561"/>
-                        <circle cx="186.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
-                        <path d="m 97.991387,753.5938 0,-43.51668 56.640753,0 15.54168,-15.54167" fill="none" stroke="#000" stroke-width="5.01302958" marker-end="url(#c)"/>
-                        <circle cx="358.71326" cy="680.97083" r="14.147884" fill="#e2a70c"/>
-                        <circle r="14.147884" cy="680.97083" cx="270.71326" fill="#e2a70c"/>
-                    </g>
-                </svg>
-
-            </section>
-
-            <section id="git-merge">
-                <p><code>git merge [target]</code> merges <code>[target]</code><br/>into the <b>current</b> branch</p>
-            </section>
-
-            <section>
-                <p><b>Step-by-Step</b></p>
-                <ol>
-                    <li><code>git branch</code> - list branches</li>
-                    <li><code>git checkout [base]</code></li>
-                    <li><code>git merge [target]</code></li>
-                    <li><code>git log --oneline</code></li>
-                </ol>
-            </section>
-
-            <section>
-                <p>A merge can either:</p>
-                <ul>
-                    <li>make a <b>new</b> commit</li>
-                    <li>fast-forward</li>
-                </ul>
-            </section>
-
-            <section>
-                <p><b>merge commit</b></p>
-                <img alt="visualizing a merge commit" src="img/png/a-merge.png"/>
-            </section>
-
-            <section>
-                <p><b>fast-forward</b></p>
-                <img alt="visualizing a fast-forward" src="img/png/fast-forward.png"/>
-            </section>
-
-            <section><p>Sometimes we have a merge conflict</p></section>
-
-            <section>
-                <p>Both branches changed the <b>same</b> lines</p>
-<pre><code class="markdown"># README: This is a practice `git` repository
-
-<<<<<<< HEAD
-I added this change in master, no conflicts here!
-=======
-I added this change in conflict, this is a conflict!
->>>>>>> conflict
-
-</code></pre>
-                <p><small><code>git</code> helps visualize conflicts</small></p>
-                <aside class="notes">
-                    <p><code>git</code> does not presume which changes are right</p>
-                </aside>
-            </section>
-
-            <section>
-                <p><code>git add</code> the <b>fixed</b> file</p>
-<pre><code class="markdown"># README: This is a practice `git` repository
-
-I added this change in master, but there was a conflict!
-
-</code></pre>
-            </section>
-
-            <section id="step-by-step-conflict">
-                <p><b>Step-by-step</b></p>
-                <ol>
-                    <li>make a commit in a new <code>[branch]</code></li>
-                    <li>commit changing <b>same</b> line in <code>[base]</code></li>
-                    <li><code>git merge [branch]</code></li>
-                    <li>Fix the conflict in <code>[file]</code></li>
-                    <li><code>git add [file] &amp;&amp; git commit</code></li>
-                </ol>
-            </section>
-
-            <section>
-                <p><code>git reset --hard HEAD</code> cancels a merge with conflicts</p>
-            </section>
-
-            <section data-state="subsection-title"><h2>Rebase</h2></section>
-
-            <section><p>Transplant branches from one place to another</p></section>
-
-            <section data-background-image="img/png/pre-rebase.png" data-background-size="100vw"></section>
-
-            <section data-background-image="img/png/post-rebase.png" data-background-size="100vw"></section>
-
-            <section><p>Avoid <b>new</b> commits!</p></section>
-
-            <section id="git-rebase">
-                <p><code>git rebase [ref]</code> transplants onto <code>[ref]</code></p>
-                <figure class="toggle-figure">
-                    <span class="toggle-figure__button"></span>
-                    <img class="toggle-figure__figure" alt="git rebase" src="img/gif/git-rebase.gif"/>
-                </figure>
-            </section>
-
-            <section><p>Rewind changes and <b>re-apply</b> one-by-one</p></section>
-
-            <section><p>Fix conflicts commit-by-commit</p></section>
-
-            <section>
-                <section>
-                    <p><code>git rebase --abort</code> stop a rebase in progress</p>
-                </section>
-
-                <section>
-                    <p><code>git rebase -Xtheirs</code> automatically favor<br/>rebase-branch changes</p>
-                </section>
-
-                <section>
-                    <p><code>git rebase -Xours</code> automatically favor<br/>base branch changes</p>
-                </section>
-
-                <section>
-                    <p><b>Note:</b> this is the opposite behavior compared to <code>git merge -X</code></p>
-                </section>
-            </section>
-
-            <section id="github" data-state="section-title"><h1>GitHub</h1></section>
-
-            <section>
-                <h2>Scope</h2>
-                <ul>
-                    <li>make a repository</li>
-                    <li>remotes</li>
-                    <li>collaborating</li>
-                </ul>
-            </section>
-
-            <section>
-                <p>Sign up at <a href="https://github.com/join">GitHub.com/<b>join</b></a></p>
-            </section>
-
-            <section>
-                <p>GitHub is an online platform for <code>git</code></p>
-                <p><a href="https://github.com/explore">GitHub.com/<b>explore</b></a></p>
-            </section>
-
-            <section data-state="subsection-title">
-                <h2>GitHub Repositories</h2>
-            </section>
-
-            <section data-state="subsection-title">
-                <h2>Remotes</h2>
-            </section>
-
-            <section><p>A <b>remote</b> computer with a <b>full</b> clone<br/>of the repository</p></section>
-
-            <section data-state="subsection-title">
-                <h2>Collaborating</h2>
-            </section>
-
-            <section id="questions">
-                <p><b>Questions?</b></p>
-                <img height="300px" alt="Gwen's profile picture" src="img/png/profile.png"/>
-                <p><small>@<a href="https://GitHub.com/glfmn">glfmn</a> on <b>GitHub</b></small></p>
-            </section>
-
-            <section id="feedback"><p><b><a href="https://github.com/glfmn/github-workshop/issues/3">Feedback</a>?</b></p></section>
-        </article>
-    </main>
-    <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
-    <script src="bower_components/reveal.js/js/reveal.js"></script>
-    <script>
-        Reveal.initialize()
-        Reveal.configure({
-            slideNumber: 'h.v'
-        })
-    </script>
-    <script src="bower_components/reveal.js/plugin/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad()</script>
-    <script src="js/toggle-figure.js"></script>
-</body>
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Git &amp; GitHub</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="css/toggle-figure.css">
+        <link rel="stylesheet" href="css/history.css">
+
+        <link rel="stylesheet" href="css/theme.css" id="theme">
+
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/darkula.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <script src="js/toggle-figure.js"></script>
+
+        <!--[if lt IE 9]>
+        <script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="body">
+
+        <main class="reveal">
+
+            <article class="slides">
+
+                
+                    
+                        
+    <section data-state="section-title" data-markdown="slides/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/link.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/scope.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/goodies.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/notation.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="what" data-markdown="slides/what/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/what/good-vc.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/what/bad-vc.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-background-image="img/bad-VC.png" data-background-size="75vw" ></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/what/commented-code.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/what/commandline.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/what/command-syntax.html"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/what/filesystem.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" data-markdown="slides/what/github.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/what/online-interface.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/what/github-features.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="section-title" id="get" data-markdown="slides/get/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/get/installation.html"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/get/linux.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/get/mac-osx.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/get/windows.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-markdown="slides/get/hello-world.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/get/configure.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/get/email.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/get/config-user.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="section-title" id="basic" data-markdown="slides/basic/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/scope.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="repository" data-markdown="slides/basic/repository/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/a-folder.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/versions.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/get-a-repository.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/repository/git-init.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/repository/git-folder.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/repository/git-folder-protected.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/current-folder.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/sbs-init.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/git-clone.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/repository/new-folder.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/repository/clone-dest.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/path.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/repository/sbs-clone.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/repository/git-status.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/repository/status-suggestions.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="staging" data-markdown="slides/basic/staging/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/staging-and-committing.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/commit-anatomy.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/staging/git-add.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/staging/git-add-p.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/file.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/git-commit.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/commit-message.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/sbs-add-commit.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/supplementary.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/git-reset.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/staging/git-checkout.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/staging/git-checkout-dot.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/staging/git-diff.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="history" data-markdown="slides/basic/history/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/key-history.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/key-commits.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/commits.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/basic/history/bad-history.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/basic/history/good-history.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/grammar.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/context.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/multi-line.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/email-syntax.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/log-entry.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/log-ommission.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log-stat.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log-patch.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log-follow.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/less.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log-oneline.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-log-n.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/git-revert.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/reverse-commit.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/basic/history/sbs-revert.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/basic/get-help.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/git-help.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/basic/man-git.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="section-title" id="advanced" data-markdown="slides/advanced/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/scope.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="branches" data-markdown="slides/advanced/branches/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/branching-history.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/multiple.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/unrelated.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/good-branches.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/advanced/branches/branch-vis.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/git-branch.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/master.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/git-branch-name.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/split-from.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/branch-does-not-checkout.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/git-checkout.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/change.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/branches/sbs-branch.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="merge" data-markdown="slides/advanced/merge/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/integrate.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/advanced/merge/merge-vis.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/git-merge.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/ff-no-ff.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/merge-commit.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/fast-forward.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/conflict.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/conflict-vis.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/merge/conflict-fix.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/advanced/merge/sbs-conflict.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/advanced/merge/git-reset.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="rebase" data-markdown="slides/advanced/rebase/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/rebase/transplant.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-background-image="img/png/pre-rebase.png" data-background-size="100vw" ></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-background-image="img/png/post-rebase.png" data-background-size="100vw" ></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/rebase/update.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/rebase/git-rebase.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/rebase/rewind.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/advanced/rebase/conflicts.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-markdown="slides/advanced/rebase/git-rebase-abort.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/advanced/rebase/git-rebase-Xtheirs.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/advanced/rebase/git-rebase-Xours.md"></section>
+
+
+                            
+                                
+    <section data-markdown="slides/advanced/rebase/X-vs-merge.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-state="section-title" id="github" data-markdown="slides/github/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/sign-up.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/platform.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/scope.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="github-repo" data-markdown="slides/github/repo/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/what-is.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/readme.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/example.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/new.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/new-dialog.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/sbs-new.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/github/repo/empty.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="remote" data-markdown="slides/github/remote/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-state="subsection-title" id="github-collaborating" data-markdown="slides/github/collab/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/questions.md"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-markdown="slides/feedback.md"></section>
+
+
+                    
+                    
+                
+            </article>
+
+        </main>
+
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script>
+
+          // Full list of configuration options available at:
+          // https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+              { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+            ]
+          });
+        </script>
+    </body>
+
 </html>
