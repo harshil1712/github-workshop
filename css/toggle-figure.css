@@ -11,7 +11,7 @@
     max-height: 100vh !important;
 }
 
-.toggle-figure__button {
+.toggle-figure__button::before {
     cursor: pointer;
 
     content: url(../img/svg/eye.svg);
@@ -25,11 +25,11 @@
     transform: translateY(0px);
 }
 
-.toggle-figure__button:hover {
+.toggle-figure__button::before:hover {
     transform: rotate(180deg);
 }
 
-.toggle_figure__button--expand {
+.toggle_figure__button--expand::before {
     opacity: 0 !important;
     border-radius: 0% !important;
     height: 0px;

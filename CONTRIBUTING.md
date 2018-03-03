@@ -1,12 +1,12 @@
 # Contributing
 
-First of all, _thank_ you for taking the time to consider contributing to this workshop!  I'm not expecting anything big, if all you do is review code in a pull request, leave feedback in #3, or open an issue, you are a hero by me, especially if you had an issue particular to your browser or operating system.
+First of all, _thank you_ for taking the time to consider contributing to this workshop!  I'm not expecting anything big, if all you do is review code in a pull request, leave feedback in #3, or open an issue, you are a hero by me, especially if you had an issue particular to your browser or operating system.
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 ## Help Wanted
 
-I have access to Windows but mainly use Linux and don't have access to MacOSX at all.  I only really use Chromium and ocassionally firefox as my web browser.  If you have another opreating system or use another browser, please let me know if you run into any platform specific issues.
+I have access to Windows but mainly use Linux and don't have access to MacOSX at all.  I only really use Chromium and occasionally FireFox as my web browser.  If you have another operating system or use another browser, please let me know if you run into any platform specific issues.
 
 If you have trouble with this presentation due to a language barrier, please let me know so I can clarify the language of my workshop.
 
@@ -33,7 +33,7 @@ If you have a question, feel free to open an issue, but please check to see if y
 - Reference issues and pull requests liberally
 - Please do not use emoji in commit messages
 - Reference code in markdown syntax
-- Start commits that only change documentation with (doc)
+- Start commits that only change documentation with [Doc]
 
 ## Your First Contribution
 
@@ -42,4 +42,3 @@ Go through the presentation and leave feedback on #3!  It's very helpful to me, 
 Working on your first Pull Request? See: [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 Feel free to ask for help; everyone is a beginner at first :smile_cat:!  This repository is a Git & GitHub workshop after all.
-
