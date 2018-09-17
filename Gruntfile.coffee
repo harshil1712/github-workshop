@@ -72,6 +72,7 @@ module.exports = (grunt) ->
 
             options:
                 jshintrc: '.jshintrc'
+                asi: true
 
             all: ['js/*.js']
 
