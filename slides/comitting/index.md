@@ -1,4 +1,4 @@
-# Basic `git`
+# Comitting
 
 Note:
 Before we _really_ begin I'd like to point out that:
