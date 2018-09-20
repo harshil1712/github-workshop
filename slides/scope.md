@@ -1,6 +1,6 @@
 ## Scope
 
 - Getting `git`
-- Basic `git`
-- Advanced `git`
-- Using **GitHub**
+- Making checkpoints
+- Branching history
+- Collaborating

@@ -1,4 +1,4 @@
-## Advanced `git`
+## Branching
 
 Note:
 These concepts are **especially** hard to grasp without hand's on experience

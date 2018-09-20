@@ -1,5 +1,5 @@
 [
-    {
+   {
         "filename": "index.md",
         "attr": {
             "data-state": "section-title"
@@ -58,155 +58,155 @@
     "get/email.md",
     "get/config-user.md",
     {
-        "filename": "basic/index.md",
+        "filename": "comitting/index.md",
         "attr": {
             "data-state": "section-title",
             "id": "basic"
         }
     },
-    "basic/scope.md",
+    "comitting/scope.md",
     {
-        "filename": "basic/repository/index.md",
+        "filename": "comitting/repository/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "repository"
         }
     },
-    "basic/repository/a-folder.md",
-    "basic/repository/versions.md",
-    "basic/repository/get-a-repository.md",
+    "comitting/repository/a-folder.md",
+    "comitting/repository/versions.md",
+    "comitting/repository/get-a-repository.md",
     [
-        "basic/repository/git-init.md",
-        "basic/repository/git-folder.md",
-        "basic/repository/git-folder-protected.md"
+        "comitting/repository/git-init.md",
+        "comitting/repository/git-folder.md",
+        "comitting/repository/git-folder-protected.md"
     ],
-    "basic/repository/current-folder.md",
-    "basic/repository/sbs-init.md",
-    "basic/repository/git-clone.md",
+    "comitting/repository/current-folder.md",
+    "comitting/repository/sbs-init.md",
+    "comitting/repository/git-clone.md",
     [
-        "basic/repository/new-folder.md",
-        "basic/repository/clone-dest.md"
+        "comitting/repository/new-folder.md",
+        "comitting/repository/clone-dest.md"
     ],
-    "basic/repository/path.md",
-    "basic/repository/sbs-clone.md",
+    "comitting/repository/path.md",
+    "comitting/repository/sbs-clone.md",
     [
-        "basic/repository/git-status.md",
-        "basic/repository/status-suggestions.md"
+        "comitting/repository/git-status.md",
+        "comitting/repository/status-suggestions.md"
     ],
     {
-        "filename": "basic/staging/index.md",
+        "filename": "comitting/staging/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "staging"
         }
     },
-    "basic/staging/staging-and-committing.md",
-    "basic/staging/commit-anatomy.md",
+    "comitting/staging/staging-and-committing.md",
+    "comitting/staging/commit-anatomy.md",
     [
-        "basic/staging/git-add.md",
-        "basic/staging/git-add-p.md"
+        "comitting/staging/git-add.md",
+        "comitting/staging/git-add-p.md"
     ],
-    "basic/staging/file.md",
-    "basic/staging/git-commit.md",
-    "basic/staging/commit-message.md",
-    "basic/staging/sbs-add-commit.md",
-    "basic/staging/supplementary.md",
-    "basic/staging/git-reset.md",
+    "comitting/staging/file.md",
+    "comitting/staging/git-commit.md",
+    "comitting/staging/commit-message.md",
+    "comitting/staging/sbs-add-commit.md",
+    "comitting/staging/supplementary.md",
+    "comitting/staging/git-reset.md",
     [
-        "basic/staging/git-checkout.md",
-        "basic/staging/git-checkout-dot.md"
+        "comitting/staging/git-checkout.md",
+        "comitting/staging/git-checkout-dot.md"
     ],
-    "basic/staging/git-diff.md",
+    "comitting/staging/git-diff.md",
     {
-        "filename": "basic/history/index.md",
+        "filename": "comitting/history/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "history"
         }
     },
-    "basic/history/key-history.md",
-    "basic/history/key-commits.md",
-    "basic/history/commits.md",
-    "basic/history/bad-history.html",
-    "basic/history/good-history.html",
-    "basic/history/grammar.md",
-    "basic/history/context.md",
-    "basic/history/multi-line.md",
-    "basic/history/email-syntax.md",
-    "basic/history/git-log.md",
-    "basic/history/log-entry.md",
-    "basic/history/log-ommission.md",
-    "basic/history/git-log-stat.md",
-    "basic/history/git-log-patch.md",
-    "basic/history/git-log-follow.md",
-    "basic/history/less.md",
-    "basic/history/git-log-oneline.md",
-    "basic/history/git-log-n.md",
-    "basic/history/git-revert.md",
-    "basic/history/reverse-commit.md",
-    "basic/history/sbs-revert.md",
+    "comitting/history/key-history.md",
+    "comitting/history/key-commits.md",
+    "comitting/history/commits.md",
+    "comitting/history/bad-history.html",
+    "comitting/history/good-history.html",
+    "comitting/history/grammar.md",
+    "comitting/history/context.md",
+    "comitting/history/multi-line.md",
+    "comitting/history/email-syntax.md",
+    "comitting/history/git-log.md",
+    "comitting/history/log-entry.md",
+    "comitting/history/log-ommission.md",
+    "comitting/history/git-log-stat.md",
+    "comitting/history/git-log-patch.md",
+    "comitting/history/git-log-follow.md",
+    "comitting/history/less.md",
+    "comitting/history/git-log-oneline.md",
+    "comitting/history/git-log-n.md",
+    "comitting/history/git-revert.md",
+    "comitting/history/reverse-commit.md",
+    "comitting/history/sbs-revert.md",
     [
-        "basic/get-help.md",
-        "basic/git-help.md",
-        "basic/man-git.md"
+        "comitting/get-help.md",
+        "comitting/git-help.md",
+        "comitting/man-git.md"
     ],
     {
-        "filename": "advanced/index.md",
+        "filename": "branching/index.md",
         "attr": {
             "data-state": "section-title",
             "id": "advanced"
         }
     },
-    "advanced/scope.md",
+    "branching/scope.md",
     {
-        "filename": "advanced/branches/index.md",
+        "filename": "branching/branches/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "branches"
         }
     },
-    "advanced/branches/branching-history.md",
-    "advanced/branches/multiple.md",
-    "advanced/branches/unrelated.md",
-    "advanced/branches/good-branches.md",
-    "advanced/branches/branch-vis.html",
-    "advanced/branches/git-branch.md",
-    "advanced/branches/master.md",
-    "advanced/branches/git-branch-name.md",
-    "advanced/branches/split-from.md",
-    "advanced/branches/branch-does-not-checkout.md",
-    "advanced/branches/git-checkout.md",
-    "advanced/branches/ref.md",
-    "advanced/branches/change.md",
-    "advanced/branches/sbs-branch.md",
+    "branching/branches/branching-history.md",
+    "branching/branches/multiple.md",
+    "branching/branches/unrelated.md",
+    "branching/branches/good-branches.md",
+    "branching/branches/branch-vis.html",
+    "branching/branches/git-branch.md",
+    "branching/branches/master.md",
+    "branching/branches/git-branch-name.md",
+    "branching/branches/split-from.md",
+    "branching/branches/branch-does-not-checkout.md",
+    "branching/branches/git-checkout.md",
+    "branching/branches/ref.md",
+    "branching/branches/change.md",
+    "branching/branches/sbs-branch.md",
     {
-        "filename": "advanced/merge/index.md",
+        "filename": "branching/merge/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "merge"
         }
     },
-    "advanced/merge/integrate.md",
-    "advanced/merge/merge-vis.html",
-    "advanced/merge/git-merge.md",
-    "advanced/merge/ff-no-ff.md",
-    "advanced/merge/merge-commit.md",
-    "advanced/merge/fast-forward.md",
-    "advanced/merge/conflict.md",
-    "advanced/merge/conflict-vis.md",
-    "advanced/merge/conflict-fix.md",
+    "branching/merge/integrate.md",
+    "branching/merge/merge-vis.html",
+    "branching/merge/git-merge.md",
+    "branching/merge/ff-no-ff.md",
+    "branching/merge/merge-commit.md",
+    "branching/merge/fast-forward.md",
+    "branching/merge/conflict.md",
+    "branching/merge/conflict-vis.md",
+    "branching/merge/conflict-fix.md",
     [
-        "advanced/merge/sbs-conflict.md",
-        "advanced/merge/git-reset.md"
+        "branching/merge/sbs-conflict.md",
+        "branching/merge/git-reset.md"
     ],
     {
-        "filename": "advanced/rebase/index.md",
+        "filename": "branching/rebase/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "rebase"
         }
     },
-    "advanced/rebase/transplant.md",
+    "branching/rebase/transplant.md",
     {
         "attr": {
             "data-background-image": "img/png/pre-rebase.png",
@@ -219,70 +219,70 @@
             "data-background-size": "100vw"
         }
     },
-    "advanced/rebase/update.md",
-    "advanced/rebase/git-rebase.md",
-    "advanced/rebase/rewind.md",
-    "advanced/rebase/conflicts.md",
+    "branching/rebase/update.md",
+    "branching/rebase/git-rebase.md",
+    "branching/rebase/rewind.md",
+    "branching/rebase/conflicts.md",
     [
-        "advanced/rebase/git-rebase-abort.md",
-        "advanced/rebase/git-rebase-Xtheirs.md",
-        "advanced/rebase/git-rebase-Xours.md",
-        "advanced/rebase/X-vs-merge.md"
+        "branching/rebase/git-rebase-abort.md",
+        "branching/rebase/git-rebase-Xtheirs.md",
+        "branching/rebase/git-rebase-Xours.md",
+        "branching/rebase/X-vs-merge.md"
     ],
     {
-        "filename": "github/index.md",
+        "filename": "collab/index.md",
         "attr": {
             "data-state": "section-title",
             "id": "github"
         }
     },
-    "github/sign-up.md",
-    "github/platform.md",
-    "github/scope.md",
+    "collab/sign-up.md",
+    "collab/platform.md",
+    "collab/scope.md",
     {
-        "filename": "github/repo/index.md",
+        "filename": "collab/repo/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "github-repo"
         }
     },
-    "github/repo/what-is.md",
-    "github/repo/readme.md",
-    "github/repo/example.md",
-    "github/repo/new.md",
-    "github/repo/new-dialog.md",
-    "github/repo/sbs-new.md",
-    "github/repo/empty.md",
+    "collab/repo/what-is.md",
+    "collab/repo/readme.md",
+    "collab/repo/example.md",
+    "collab/repo/new.md",
+    "collab/repo/new-dialog.md",
+    "collab/repo/sbs-new.md",
+    "collab/repo/empty.md",
     {
-        "filename": "github/remote/index.md",
+        "filename": "collab/remote/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "remote"
         }
     },
-    "github/remote/git-remote-add.md",
-    "github/remote/git-fetch.md",
-    "github/remote/git-push-set-upstream.md",
-    "github/remote/git-push.md",
-    "github/remote/sbs-push.md",
-    "github/remote/git-clone.md",
-    "github/remote/git-pull.md",
-    "github/remote/git-rebase.md",
+    "collab/remote/git-remote-add.md",
+    "collab/remote/git-fetch.md",
+    "collab/remote/git-push-set-upstream.md",
+    "collab/remote/git-push.md",
+    "collab/remote/sbs-push.md",
+    "collab/remote/git-clone.md",
+    "collab/remote/git-pull.md",
+    "collab/remote/git-rebase.md",
     {
-        "filename": "github/collab/index.md",
+        "filename": "collab/collab/index.md",
         "attr": {
             "data-state": "subsection-title",
             "id": "github-collaborating"
         }
     },
-    "github/collab/issue-pr.md",
-    "github/collab/issue.md",
-    "github/collab/sbs-issue.md",
-    "github/collab/pr.md",
-    "github/collab/pr-example.md",
-    "github/collab/pr-prerec.md",
-    "github/collab/pr-new.md",
-    "github/collab/sbs-pr.md",
+    "collab/collab/issue-pr.md",
+    "collab/collab/issue.md",
+    "collab/collab/sbs-issue.md",
+    "collab/collab/pr.md",
+    "collab/collab/pr-example.md",
+    "collab/collab/pr-prerec.md",
+    "collab/collab/pr-new.md",
+    "collab/collab/sbs-pr.md",
     "questions.md",
     "feedback.md"
 ]
