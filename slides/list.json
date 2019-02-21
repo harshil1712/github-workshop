@@ -6,6 +6,7 @@
         }
     },
     "link.md",
+    "aboutme.md",
     [
         "scope.md",
         "goodies.md",
@@ -26,12 +27,6 @@
             "data-background-size": "75vw"
         }
     },
-    "what/commented-code.md",
-    [
-        "what/commandline.html",
-        "what/command-syntax.html",
-        "what/filesystem.md"
-    ],
     {
         "filename": "what/github.md",
         "attr": {
